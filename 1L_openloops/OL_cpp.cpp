@@ -1,42 +1,34 @@
 
-// calculate the tree and loop matrix element of the process
-// q qbar -> g t tbar for given phase-space point in evaluation example
+// C++ example program for the native interface of OpenLoops.
+// It calculates the tree and loop matrix element of the process
+// d dbar -> Z u ubar for a random phase-space point.
 
 #include <iostream>
 #include "openloops.h"
 
 int main() {
 
-  double pp[5][4] =
-  {{243.959,           0.,           0.,     243.959},
-   {243.274,           0,           0,    -243.274},
-   {72.421,     50.6623,     44.0522,     27.1576},
-   {202.734,    -81.9446,     60.9516,     30.2432},
-   {212.079,     31.2822,    -105.004,    -56.7164}};
-
-  double muv = sqrt((p[0][0]+p[1][0])*(p[0][0]+p[1][0]) - (p[0][3]+p[1][3])*(p[0][3]+p[1][3]));
-  double mt = sqrt((p[3][0])*(p[3][0]) - (p[3][1])*(p[3][1]) - (p[3][2])*(p[3][2]) - (p[3][3])*(p[3][3]));
-  
-  double sqrts = muv, mq = 0., mt = mt, mu = muv, alphas = 1./(4*M_PI); // dimensionful: GeV
+  double sqrts = 1000., mu = 100., mZ = 91.2, alphas = 0.1;
   double m2_tree, m2_loop[3], acc;
 
-  // pure QCD (order_s fixed by LO/NLO)
-  ol_setparameter_int("order_ew", 0);
+  // coupling order alpha_ew^1, implies QCD correction for loop process
+  ol_setparameter_int("order_ew", 1);
 
-  // first example: massless d quark
-  ol_setparameter_double("mass(1)", mq);
-  ol_setparameter_double("mass(6)", mt);
+  // Set parameter: Z mass
+  ol_setparameter_double("mass(23)", mZ);
 
   // Increase verbosity level to list loaded libraries
   ol_setparameter_int("verbose", 1);
 
-  // example process d dbar -> g t tbar (since q are massless: should not matter)
+  //
+  // register one-loop amplitude for process d dbar -> Z u ubar.
+  // The "ppzjj" process library must be installed before via
+  // $ ./scons auto=ppzjj
   //
   // second argument of ol_register_process:
   // 1 for tree-like matrix elements (tree, color and spin correlations),
-  // 11 for loop, 12 for loop^2 (loop induced: processes without tree)
-
-  int id = ol_register_process("1 -1 -> 21 6 -6", 11);
+  // 11 for loop, 12 for loop^2
+  int id = ol_register_process("1 -1 -> 23 2 -2", 11);
 
   // Initialize OpenLoops
   ol_start();
@@ -49,15 +41,16 @@ int main() {
     ol_setparameter_double("mu", mu);
 
     // Obtain a random phase-space point in the format pp[5*N] from Rambo
-    std::cout.precision(20);
+    double pp[5*ol_n_external(id)];
+    ol_phase_space_point(id, sqrts, pp);
+    std::cout.precision(15);
     std::cout << std::endl;
     std::cout << "Tree and loop matrix element of the process" << std::endl;
-    std::cout << "d dbar -> g t tbar" << std::endl;
+    std::cout << "d dbar -> Z u ubar" << std::endl;
     std::cout << "for the phase-space point" << std::endl;
     for (int k = 0; k < 5; k++) {
       std::cout << "P[" << k+1 << "] = " << pp[5*k] << "  " << pp[5*k+1]
-                << "  " << pp[5*k+2] << "  " << pp[5*k+3]  << "  m="
-            << pp[5*k+4]<< std::endl;
+                << "  " << pp[5*k+2] << "  " << pp[5*k+3] << std::endl;
     }
 
     // evaluate tree matrix element
@@ -85,5 +78,5 @@ int main() {
 
   ol_finish();
 
-  return 0; // result has GeV^-2 ???
+  return 0;
 }
