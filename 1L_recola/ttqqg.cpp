@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
   //Recola::set_compute_ir_poles_rcl(1);
   //Recola::set_on_shell_scheme_rcl;
   //Recola::set_complex_mass_scheme_rcl;
-  Recola::set_print_level_squared_amplitude_rcl(2);
+  Recola::set_print_level_squared_amplitude_rcl(3);
   //Recola::set_print_level_amplitude_rcl(2);
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
