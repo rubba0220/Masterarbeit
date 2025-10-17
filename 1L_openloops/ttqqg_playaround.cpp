@@ -8,22 +8,11 @@
 
 int main() {
 
-  double p[5][4] =
-  {{243.958874340707,                    0,                    0,     243.958874340707},
-   {243.274422280898,                    0,                    0,    -243.274422280898},
-   {72.4210128964652,     50.6623055703701,     44.0522222052368,     27.1576070747199},
-   {202.733585822752,    -81.9445526000469,      60.951575089163,     30.2432242639469},
-   {212.078697902388,     31.2822470296768,      -105.0037972944,    -56.7163792788578}};
-
-  double muv = sqrt((p[0][0]+p[1][0])*(p[0][0]+p[1][0]) - (p[0][3]+p[1][3])*(p[0][3]+p[1][3]));
-  double mtv = sqrt((p[3][0])*(p[3][0]) - (p[3][1])*(p[3][1]) - (p[3][2])*(p[3][2]) - (p[3][3])*(p[3][3]));
-  
-  double sqrts = muv, mq = 0., mt = mtv, mu = muv, alphas = 1./(4*M_PI); // dimensionful: GeV
+  double sqrts = 10000., mq = 0., mt = 1735, mu = 100., alphas = 1./(4*M_PI); // dimensionful: GeV
   double m2_tree, m2_loop[3], acc;
 
   // pure QCD (order_s fixed by LO/NLO)
   ol_setparameter_int("order_ew", 0);
-  ol_setparameter_int("polenorm", 1);
 
   // first example: massless d quark
   ol_setparameter_double("mass(1)", mq);
@@ -51,13 +40,8 @@ int main() {
     ol_setparameter_double("mu", mu);
 
     // Obtain a random phase-space point in the format pp[5*N] from Rambo
-    double pp[25] = {
-        243.958874340707, 0, 0, 243.958874340707, 0,
-        243.274422280898, 0, 0, -243.274422280898, 0,
-        72.4210128964652, 50.6623055703701, 44.0522222052368, 27.1576070747199, 0,
-        202.733585822752, -81.9445526000469, 60.951575089163, 30.2432242639469, mtv,
-        212.078697902388, 31.2822470296768, -105.0037972944, -56.7163792788578, mtv
-    };
+    double pp[5*ol_n_external(id)];
+    ol_phase_space_point(id, sqrts, pp);
     std::cout.precision(20);
     std::cout << std::endl;
     std::cout << "Tree and loop matrix element of the process" << std::endl;
@@ -83,10 +67,10 @@ int main() {
     // print loop result
     std::cout << std::endl;
     std::cout << "ol_evaluate_loop" << std::endl;
-    std::cout << "Tree:       " << m2_tree * 36 << std::endl;
-    std::cout << "Loop ep^0:  " << m2_loop[0] * 36 << std::endl;
-    std::cout << "Loop ep^-1: " << m2_loop[1] * 36 << std::endl;
-    std::cout << "Loop ep^-2: " << m2_loop[2] * 36 << std::endl;
+    std::cout << "Tree:       " << m2_tree << std::endl;
+    std::cout << "Loop ep^0:  " << m2_loop[0] << std::endl;
+    std::cout << "Loop ep^-1: " << m2_loop[1] << std::endl;
+    std::cout << "Loop ep^-2: " << m2_loop[2] << std::endl;
     std::cout << "Accuracy:   " << acc << std::endl;
     std::cout << std::endl;
   }
