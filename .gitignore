@@ -1,3 +1,9 @@
-1L_recola/output_cll/ErrOut.coli
-1L_recola/output_cll/ErrOut.cll
-1L_recola/output_cll/InfOut.cll
+1L_recola/output_cll/*
+
+1L_madgraph/ttqqg/*
+1L_madgraph/py.py
+
+!1L_madgraph/ttqqg/SubProcesses/P1_Sigma_sm_ddx_gttx/ttqqg.cpp
+!1L_madgraph/ttqqg/SubProcesses/Makefile
+
+
