@@ -3,7 +3,7 @@
 1L_madgraph/ttqqg/*
 1L_madgraph/py.py
 
-!1L_madgraph/ttqqg/SubProcesses/P1_Sigma_sm_ddx_gttx/ttqqg.cpp
 !1L_madgraph/ttqqg/SubProcesses/Makefile
+!1L_madgraph/ttqqg/SubProcesses/ttqqg.cpp
 
 
