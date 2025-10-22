@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 // Step 2
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-  Recola::define_process_rcl(1,"d d~ -> g t t~","NLO");
+  Recola::define_process_rcl(1,"g g -> g t t~","NLO");
 
   //Recola::set_delta_ir_rcl(0., M_PI*M_PI/12.);
   
@@ -65,8 +65,8 @@ int main(int argc, char *argv[])
   Recola::get_squared_amplitude_rcl(1,3,"LO",A_tree);
   Recola::get_squared_amplitude_rcl(1,4,"NLO",A_oneloop);
 
-  std::cout << "LO  : " << std::scientific << A_tree * 36. << "\n";
-  std::cout << "NLO : " << std::scientific << A_oneloop * 36. << "\n";
+  std::cout << "LO  : " << std::scientific << A_tree * 256. << "\n";
+  std::cout << "NLO : " << std::scientific << A_oneloop * 256. << "\n";
 
   //double I1;
   //double I2;
