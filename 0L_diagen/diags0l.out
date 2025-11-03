@@ -1,0 +1,181 @@
+*--#[ d1 :
+
+*	internal fields: A A 
+*
+*	detailed description:
+*
+*	0: 0 -> 7, p1
+*	1: 1 -> 7, p2
+*	2: 5 -> 7, A -> A, -p1-p2
+*	3: 2 -> 6, -p3
+*	4: 3 -> 6, -p4
+*	5: 5 -> 6, A -> A, p4+p3
+*	6: 4 -> 5, -p5
+
+#define nf "0"
+
+#define nl "0"
+
+g d1 =
+
+	+6*(+i_)
+	*VBar(p2,0,cOli1)
+	*G(0, v7l2)*(cOlT(cOli1,cOli0,cOli2))
+	*U(p1,0,cOli0)
+	*UBar(p3,1,cOli3)
+	*G(1, v6l5)*(cOlT(cOli3,cOli4,cOli5))
+	*V(p4,1,cOli4)
+	*VVV(-p5, v5l6, p1+p2, v5l2, -p4-p3, v5l5)
+	*(-1/6*i_*cOlf(cOli6,cOli2,cOli5))
+	*DV(v5l2, v7l2, -p1-p2, 0)
+	*DV(v5l5, v6l5, p4+p3, 0)
+	*EpsStar(v5l6,p5,cOli6)
+
+;
+
+*--#] d1 :
+
+*--#[ d2 :
+
+*	internal fields: A Q 
+*
+*	detailed description:
+*
+*	0: 0 -> 7, p1
+*	1: 1 -> 7, p2
+*	2: 5 -> 7, A -> A, -p1-p2
+*	3: 2 -> 6, -p3
+*	4: 3 -> 6, -p5
+*	5: 5 -> 6, QBar -> Q, p5+p3
+*	6: 4 -> 5, -p4
+
+#define nf "0"
+
+#define nl "0"
+
+g d2 =
+
+	+1*(+i_)
+	*VBar(p2,0,cOli1)
+	*G(0, v7l2)*(cOlT(cOli1,cOli0,cOli2))
+	*U(p1,0,cOli0)
+	*UBar(p3,1,cOli3)
+	*G(1, v6l4)*(cOlT(cOli3,cOli5,cOli4))
+	*SF(1, p5+p3, M)
+	*G(1, v5l2)*(cOlT(cOli5,cOli6,cOli2))
+	*V(p4,1,cOli6)
+	*DV(v5l2, v7l2, -p1-p2, 0)
+	*EpsStar(v6l4,p5,cOli4)
+
+;
+
+*--#] d2 :
+
+*--#[ d3 :
+
+*	internal fields: A Q 
+*
+*	detailed description:
+*
+*	0: 0 -> 7, p1
+*	1: 1 -> 7, p2
+*	2: 5 -> 7, A -> A, -p1-p2
+*	3: 2 -> 6, -p4
+*	4: 3 -> 6, -p5
+*	5: 5 -> 6, Q -> QBar, p5+p4
+*	6: 4 -> 5, -p3
+
+#define nf "0"
+
+#define nl "0"
+
+g d3 =
+
+	+1*(+i_)
+	*VBar(p2,0,cOli1)
+	*G(0, v7l2)*(cOlT(cOli1,cOli0,cOli2))
+	*U(p1,0,cOli0)
+	*UBar(p3,1,cOli6)
+	*G(1, v5l2)*(cOlT(cOli6,cOli5,cOli2))
+	*SF(1, -p5-p4, M)
+	*G(1, v6l4)*(cOlT(cOli5,cOli3,cOli4))
+	*V(p4,1,cOli3)
+	*DV(v5l2, v7l2, -p1-p2, 0)
+	*EpsStar(v6l4,p5,cOli4)
+
+;
+
+*--#] d3 :
+
+*--#[ d4 :
+
+*	internal fields: q A 
+*
+*	detailed description:
+*
+*	0: 0 -> 7, p1
+*	1: 1 -> 7, -p5
+*	2: 5 -> 7, q -> qbar, -p1+p5
+*	3: 2 -> 6, -p3
+*	4: 3 -> 6, -p4
+*	5: 5 -> 6, A -> A, p4+p3
+*	6: 4 -> 5, p2
+
+#define nf "0"
+
+#define nl "0"
+
+g d4 =
+
+	+1*(+i_)
+	*UBar(p3,0,cOli3)
+	*G(0, v6l5)*(cOlT(cOli3,cOli4,cOli5))
+	*V(p4,0,cOli4)
+	*VBar(p2,1,cOli6)
+	*G(1, v5l5)*(cOlT(cOli6,cOli2,cOli5))
+	*SF(1, p1-p5, 0)
+	*G(1, v7l1)*(cOlT(cOli2,cOli0,cOli1))
+	*U(p1,1,cOli0)
+	*EpsStar(v7l1,p5,cOli1)
+	*DV(v5l5, v6l5, p4+p3, 0)
+
+;
+
+*--#] d4 :
+
+*--#[ d5 :
+
+*	internal fields: q A 
+*
+*	detailed description:
+*
+*	0: 0 -> 7, p2
+*	1: 1 -> 7, -p5
+*	2: 5 -> 7, qbar -> q, -p2+p5
+*	3: 2 -> 6, -p3
+*	4: 3 -> 6, -p4
+*	5: 5 -> 6, A -> A, p4+p3
+*	6: 4 -> 5, p1
+
+#define nf "0"
+
+#define nl "0"
+
+g d5 =
+
+	+1*(+i_)
+	*VBar(p2,0,cOli0)
+	*G(0, v7l1)*(cOlT(cOli0,cOli2,cOli1))
+	*SF(0, -p2+p5, 0)
+	*G(0, v5l5)*(cOlT(cOli2,cOli6,cOli5))
+	*U(p1,0,cOli6)
+	*UBar(p3,1,cOli3)
+	*G(1, v6l5)*(cOlT(cOli3,cOli4,cOli5))
+	*V(p4,1,cOli4)
+	*EpsStar(v7l1,p5,cOli1)
+	*DV(v5l5, v6l5, p4+p3, 0)
+
+;
+
+*--#] d5 :
+

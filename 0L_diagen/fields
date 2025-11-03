@@ -1,0 +1,9 @@
+#    particle     anti-particle        name              type          mass
+
+	A 		A 		A 		Vector 		0	Eps(v%vl%l,%p,cOli%l)	EpsStar(v%vl%l,%p,cOli%l)
+
+	Q 		QBar	 	Q 		Fermion		M	U(%p,%c,cOli%l)	V(%p,%c,cOli%l)	VBar(%p,%c,cOli%l)	UBar(%p,%c,cOli%l)
+
+	q 		qbar	 	q 		Fermion		0	U(%p,%c,cOli%l)	V(%p,%c,cOli%l)	VBar(%p,%c,cOli%l)	UBar(%p,%c,cOli%l)
+
+	C 		CBar 		C 		Ghost		0	C(%p,cOli%l)	C(%p,cOli%l)	CBar(%p,cOli%l)	CBar(%p,cOli%l)

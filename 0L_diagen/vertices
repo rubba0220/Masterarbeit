@@ -1,0 +1,30 @@
+	A A A A (0)
+
+-1/24*(cOlf(cOlj%v,cOli%l1,cOli%l3)*cOlf(cOlj%v,cOli%l2,cOli%l4)
+	+cOlf(cOlj%v,cOli%l2,cOli%l3)*cOlf(cOlj%v,cOli%l1,cOli%l4));
+
+-1/24*(cOlf(cOlj%v,cOli%l1,cOli%l2)*cOlf(cOlj%v,cOli%l3,cOli%l4)
+	+cOlf(cOlj%v,cOli%l3,cOli%l2)*cOlf(cOlj%v,cOli%l1,cOli%l4));
+
+-1/24*(cOlf(cOlj%v,cOli%l1,cOli%l2)*cOlf(cOlj%v,cOli%l4,cOli%l3)
+	+cOlf(cOlj%v,cOli%l4,cOli%l2)*cOlf(cOlj%v,cOli%l1,cOli%l3));
+
+
+	A A A (0)
+
+-1/6*i_*cOlf(cOli%l1,cOli%l2,cOli%l3);
+
+
+	QBar Q A (0)
+
+cOlT(cOli%l1,cOli%l2,cOli%l3);
+
+
+	qbar q A (0)
+
+cOlT(cOli%l1,cOli%l2,cOli%l3);
+
+
+	CBar C A (0)
+
+i_*cOlf(cOli%l1,cOli%l2,cOli%l3);
