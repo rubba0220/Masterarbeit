@@ -12,5 +12,5 @@ cf ten;
 local test = (10*pp12
 +pp23);
 
-print
+print;
 .end
