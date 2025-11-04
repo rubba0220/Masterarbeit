@@ -6,11 +6,12 @@ cf delta;
 i i0, ..., i10;
 cf ten;
 
-#include declarations_mod.h
+#include declarations.h
 #include diags0l.out #d1
 #include terms.list
 
+local test = (10*pp12
++pp13);
 
-
-
+print
 .end
