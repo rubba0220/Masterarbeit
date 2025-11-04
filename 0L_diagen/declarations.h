@@ -1,10 +1,7 @@
-****************************************
-* Interface to DiaGen
+* header file to declare variables from DiaGen output
 
-s d, ep;
-dimension d;
-
-* because of a bug in form one cannot autodeclare!!!
+********************
+* indices used by DiaGen and in following FORM files
 
 i v;
 #do i=0,19
@@ -18,59 +15,35 @@ i v;
 
 i mu, nu, al, be;
 s n, n1, n2, m;
-v k, k1, k2, k3, p, p1, p2, p3, p4, kT, p5;
+i i1,i2,i3,i4,a5;
 
 ********************
-* Mandelstam variables
+* momenta and invariants
 
-s s, t, u;
-
-********************
-* process specific
-*
-* ms = M^2/s
-* x = t/s
-* y = u/s
-
-s M, ms, x, y;
-
-********************
-* utilities
-
-cf pow;
+v p1, p2, p3, p4, p5, k, k1, k2, k3;
+s pp12, pp23, pp34, pp45, pp15, mt2, M;
 
 ********************
 * wave functions
+*Functions declares non-commuting objects - spinor space
 
-f U, UBar, V, VBar
-cf Eps, EpsStar;
+f U, UBar, V, VBar;     *Functions declares non-commuting objects - spinor space
+cf Eps, EpsStar;        *CFunctions declares commuting functions
 
 ********************
 * propagator functions
 
-f SF;
+f SF;                   *spinor space
 cf DS, DG, DV;
 
 ********************
 * vertex functions
-*
-* VVV(k1, a1, k2, a2, k3, a3) = (k1(a3)-k2(a3))*d_(a1, a2)+...
-*
-* G(i, a) = g_(i, a)
 
 cf VVV;
-f G;
+f G;                    *Why non-commuting?
 
 ****************************************
 * QCD
-
-* gauge parameter (xi = 0 for Feynman gauge)
-
-s xi(:1);
-
-* mass renormalization constant
-
-s dZM;
 
 * number of fermion loops and light fermion loops and color factors
 
@@ -78,11 +51,28 @@ s nf, nl;
 s CF, CA, TF, NF, NA;
 cf color, T;
 
+
+****************************************
+* utilities
+
+cf pow;
+s x;
+CFunction cOldel(symmetric);
+
 ****************************************
 * colors
 
 cf delta(symmetric);
 
-#include color.h
+Symbol cOlNA,cOlNR;
+Dimension cOlNA;
+AutoDeclare Index cOli;
+AutoDeclare Symbol cOlI;
+AutoDeclare Symbol cOlc;
+Symbol cOln, cOlcA,cOlcR,[cOlcR-cOlcA/2];
+Tensor cOlf(antisymmetric);
+Tensor cOlT;
+
+* #include color.h
 
 .global
