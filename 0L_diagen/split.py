@@ -25,15 +25,15 @@ index_end = lines.index('~~~end_sum')
 
 lines = lines[index_start:index_end]
 
-index_s1 = lines.index('+ cOldel(i1,i2)*cOlT(i3,i4,a5)*NF^-1 * (')
+index_s1 = lines.index('+ cOldel(i1,i2)*cOlT(i4,i3,a5)*NF^-1 * (')
 index_e1 = lines.index(')')
 color_terms.append(lines[index_s1:index_e1+1])
 lines = lines[index_e1+1:]
-index_s2 = lines.index('+ cOldel(i1,i3)*cOlT(i2,i4,a5) * (')
+index_s2 = lines.index('+ cOldel(i1,i4)*cOlT(i2,i3,a5) * (')
 index_e2 = lines.index(')')
 color_terms.append(lines[index_s2:index_e2+1])
 lines = lines[index_e2+1:]
-index_s3 = lines.index('+ cOldel(i2,i4)*cOlT(i3,i1,a5) * (')
+index_s3 = lines.index('+ cOldel(i2,i3)*cOlT(i4,i1,a5) * (')
 index_e3 = lines.index(')')
 color_terms.append(lines[index_s3:index_e3+1])
 lines = lines[index_e3+1:]
@@ -41,7 +41,7 @@ index_s4 = lines.index('+ cOldel(i3,i4)*cOlT(i2,i1,a5)*NF^-1 * (')
 index_e4 = lines.index(');')
 color_terms.append(lines[index_s4:index_e4+1])
 
-tags = ['d12T345', 'd13T245', 'd24T135', 'd34T125']
+tags = ['d12T435', 'd14T235', 'd23T415', 'd34T215']
 
 os.makedirs(OUTDIR, exist_ok=True)
 

@@ -388,10 +388,10 @@ main(int argc, char* argv[])
   out_fields.push_back("QBar");
   out_fields.push_back("A");
 
-  in_momenta.push_back("p1");
-  in_momenta.push_back("p2");
-  out_momenta.push_back("p3");
-  out_momenta.push_back("p4");
+  in_momenta.push_back("p3");
+  in_momenta.push_back("p4");
+  out_momenta.push_back("p2");
+  out_momenta.push_back("p1");
   out_momenta.push_back("p5");
 
   prototypes.enable(PrototypeMap::Postscript);

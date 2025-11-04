@@ -1,9 +1,9 @@
 #procedure ColorFactors
 
-id VBar(p2,v?,cOli0?) = VBar(p2,v)*cOldel(i2, cOli0);
-id UBar(p3,v?,cOli0?) = UBar(p3,v)*cOldel(i3, cOli0);
-id U(p1,v?,cOli0?) = U(p1,v)*cOldel(i1, cOli0);
-id V(p4,v?,cOli0?) = V(p4,v)*cOldel(i4, cOli0);
+id VBar(p4,v?,cOli0?) = VBar(p4,v)*cOldel(i4, cOli0);
+id UBar(p2,v?,cOli0?) = UBar(p2,v)*cOldel(i2, cOli0);
+id U(p3,v?,cOli0?) = U(p3,v)*cOldel(i3, cOli0);
+id V(p1,v?,cOli0?) = V(p1,v)*cOldel(i1, cOli0);
 id EpsStar(v0l0?,p5,cOli0?) = EpsStar(v0l0,p5)*cOldel(a5,cOli0);
 
 id cOlT(cOli0?, cOli1?, cOli2?)*cOlT(cOli3?, cOli4?, cOli5?)*cOlf(cOli6?, cOli2?, cOli5?) = -i_*TF*(cOlT(cOli3, cOli1, cOli6)*cOldel(cOli0, cOli4) - cOlT(cOli0, cOli4, cOli6)*cOldel(cOli1, cOli3));
