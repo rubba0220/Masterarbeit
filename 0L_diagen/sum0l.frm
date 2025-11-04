@@ -30,10 +30,10 @@ id DS(k?,m?,1) = pow(k.k-m^2,-1);
 #message invariants
 Argument pow;
 repeat;
-id p1.p1 = mt2;
-id p2.p2 = mt2;
-id p3.p3 = 0;
-id p4.p4 = 0;
+id p1.p1 = 0;
+id p2.p2 = 0;
+id p3.p3 = mt2;
+id p4.p4 = mt2;
 id p5.p5 = 0;
 id p1.p2 = pp12;
 id p2.p3 = pp23;

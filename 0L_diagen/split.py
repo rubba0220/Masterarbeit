@@ -47,7 +47,7 @@ os.makedirs(OUTDIR, exist_ok=True)
 
 for i, t in enumerate(color_terms, 1):
     tag = tags[i-1]
-    fname = os.path.join(OUTDIR, f"term_{tag}.frm")
+    fname = os.path.join(OUTDIR, f"0L_{tag}.frm")
     print(f"Writing term file: {fname}")
     with open(fname, "w") as g:
         expr = "\n".join(t)
