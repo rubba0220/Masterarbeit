@@ -6,11 +6,11 @@ cf delta;
 i i0, ..., i10;
 cf ten;
 
-#include declarations_mod.h
+#include declarations.h
 #include diags0l.out #d1
-#include terms.list
+#include color_decomposition/0L_d12T345.frm
 
-
+print;
 
 
 .end
