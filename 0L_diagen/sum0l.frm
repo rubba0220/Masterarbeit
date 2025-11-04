@@ -3,7 +3,7 @@
 #include declarations.h
 
 Off Statistics;
-
+Format 255;
 
 g sum0l = 0;
 
