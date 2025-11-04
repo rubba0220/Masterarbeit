@@ -6,10 +6,9 @@
 
 * no factors of coupling and no i`s, g`s global for fixed loop order, i`s already done by DiaGen ????
 
-
 * scalar propagator DS(momentum, mass, power?)
 
-* ghost propagator (momentum, ???)
+* ghost propagator (momentum, mass?)
 id DG(k?,0) = DS(k,0,1);
 
 * fermion propagator (fermion line number, momentum, mass)
@@ -18,14 +17,12 @@ id SF(v?,k?,m?) = (g_(v,k)+m*gi_(v))*DS(k,m,1);
 * gamma matrix, e.g. quak-gauge boson vertex (fermion line number, Lorentz index) 
 id G(v?,mu?) = g_(v,mu);
 
-
 * factor out DV, do all replacements but keep brackets
 b DV;
 .sort
 Keep Brackets;
 
-
-* replace one gauge propagator at a time by its value in terms of scalar propagators (probably for performance reasons)
+* replace one massless gauge propagator at a time by its value in terms of scalar propagators (probably for performance reasons)
 * log entry modified probably for Debug reason
 #do i=1,1
   id once DV(v1?,v2?,k?,0) = -DS(k,0,1)*d_(v1,v2)+`GAUGE'*k(v1)*k(v2)*DS(k,0,2);
@@ -35,7 +32,7 @@ Keep Brackets;
   Keep Brackets;
 #enddo
 
-* same procedure for thre gluon vertex, also if one of the momenta is zero ???
+* same procedure for thre gluon vertex (also if one of the momenta is zero ???)
 b VVV;
 .sort
 Keep Brackets;
@@ -55,7 +52,7 @@ Keep Brackets;
   Keep Brackets;
 #enddo
 
-* does not include quartic vertex, quaric vertex maybe automatically done by DiaGen
+* does not include quartic vertex (quartic vertex maybe automatically done by DiaGen ?)
 
 .sort;
 

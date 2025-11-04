@@ -6,7 +6,7 @@ import sys
 FORM_EXEC = "form"
 FORM_INPUT = "sum0l.frm"
 OUTDIR = "color_decomposition"
-TERMS_FILE = "terms.list"
+TERMS_FILE = "generate/terms.list"
 # ------------------------------------------------------------
 
 print(f"Running FORM: {FORM_EXEC} {FORM_INPUT}")
@@ -47,7 +47,7 @@ os.makedirs(OUTDIR, exist_ok=True)
 
 for i, t in enumerate(color_terms, 1):
     tag = tags[i-1]
-    fname = os.path.join(OUTDIR, f"0L_{tag}.frm")
+    fname = os.path.join(OUTDIR, f"0L_{tag}.out")
     print(f"Writing term file: {fname}")
     with open(fname, "w") as g:
         expr = "\n".join(t)

@@ -1,8 +1,0 @@
-Local d34T215 = + cOldel(i3,i4)*cOlT(i2,i1,a5)*NF^-1 * (
-+ 1/2*VBar(p4,0)*g_(0,v7l2)*U(p3,0)*UBar(p2,1)*g_(1,v6l4,p2,v7l2)*V(p1,1)*EpsStar(v6l4,p5)*pow(2*pp34,-1)*pow( - 2*mt2 - 2*pp15 + 2*pp34 - 2*pp12,-1)*i_
-+ 1/2*VBar(p4,0)*g_(0,v7l2)*U(p3,0)*UBar(p2,1)*g_(1,v6l4,p5,v7l2)*V(p1,1)*EpsStar(v6l4,p5)*pow(2*pp34,-1)*pow( - 2*mt2 - 2*pp15 + 2*pp34 - 2*pp12,-1)*i_
-+ 1/2*VBar(p4,0)*g_(0,v7l2)*U(p3,0)*UBar(p2,1)*g_(1,v6l4,v7l2)*V(p1,1)*EpsStar(v6l4,p5)*pow(2*pp34,-1)*pow( - 2*mt2 - 2*pp15 + 2*pp34 - 2*pp12,-1)*i_*M
-- 1/2*VBar(p4,0)*g_(0,v7l2)*U(p3,0)*UBar(p2,1)*g_(1,v7l2,p1,v6l4)*V(p1,1)*EpsStar(v6l4,p5)*pow(2*pp34,-1)*pow(2*pp15,-1)*i_
-- 1/2*VBar(p4,0)*g_(0,v7l2)*U(p3,0)*UBar(p2,1)*g_(1,v7l2,p5,v6l4)*V(p1,1)*EpsStar(v6l4,p5)*pow(2*pp34,-1)*pow(2*pp15,-1)*i_
-+ 1/2*VBar(p4,0)*g_(0,v7l2)*U(p3,0)*UBar(p2,1)*g_(1,v7l2,v6l4)*V(p1,1)*EpsStar(v6l4,p5)*pow(2*pp34,-1)*pow(2*pp15,-1)*i_*M
-);

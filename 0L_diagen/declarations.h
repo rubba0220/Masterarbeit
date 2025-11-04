@@ -1,7 +1,10 @@
-* header file to declare variables from DiaGen output
+***************************************************************************************
+* header file to declare variables from DiaGen output and used in FORM files
+***************************************************************************************
 
-********************
-* indices used by DiaGen and in following FORM files
+
+***************************************************************************
+* indices used by DiaGen and in FORM files
 
 i v;
 #do i=0,19
@@ -13,66 +16,75 @@ i v;
   #enddo
 #enddo
 
-i mu, nu, al, be;
-s n, n1, n2, m;
+i mu, nu, rho, sigma;
 i i1,i2,i3,i4,a5;
 
-********************
-* momenta and invariants
 
-v p1, p2, p3, p4, p5, k, k1, k2, k3;
-s pp12, pp23, pp34, pp45, pp15, mt2, M;
+***************************************************************************
+* momenta, reference vectors, masses and invariants
 
-********************
+v p, p1, p2, p3, p4, p5, k, k1, k2, k3, f, f1, f2, r, r1, r2, q;
+s pp, pp12, pp23, pp34, pp45, pp15;
+s M, m;
+
+
+***************************************************************************
 * wave functions
-*Functions declares non-commuting objects - spinor space
+* non-commuting objects -> spinor space
 
-f U, UBar, V, VBar;     *Functions declares non-commuting objects - spinor space
-cf Eps, EpsStar;        *CFunctions declares commuting functions
+f U, UBar, V, VBar;
+cf Eps, EpsStar;
 
-********************
+
+***************************************************************************
 * propagator functions
+* non-commuting objects -> spinor space
 
-f SF;                   *spinor space
+f SF;
 cf DS, DG, DV;
 
-********************
+
+***************************************************************************
 * vertex functions
+* non-commuting objects -> spinor space
 
+f G;
 cf VVV;
-f G;                    *Why non-commuting?
 
-****************************************
+
+***************************************************************************
 * QCD
-
 * number of fermion loops and light fermion loops and color factors
+* color space objects
 
 s nf, nl;
 s CF, CA, TF, NF, NA;
-cf color, T;
+cf color;
 
-
-****************************************
-* utilities
-
-cf pow;
-s x;
-CFunction cOldel(symmetric);
-
-****************************************
-* colors
-
-cf delta(symmetric);
-
-Symbol cOlNA,cOlNR;
+cf cOldel(symmetric);
+t cOlf(antisymmetric), cOlT;
+s cOlNA,cOlNR, cOln, cOlcA,cOlcR,[cOlcR-cOlcA/2];
 Dimension cOlNA;
 AutoDeclare Index cOli;
 AutoDeclare Symbol cOlI;
 AutoDeclare Symbol cOlc;
-Symbol cOln, cOlcA,cOlcR,[cOlcR-cOlcA/2];
-Tensor cOlf(antisymmetric);
-Tensor cOlT;
 
-* #include color.h
 
+***************************************************************************
+* utilities for potentiation and other algebraic operations
+
+cf pow;
+s x,y,z;
+s n;
+cf delta(symmetric);
+
+
+***************************************************************************
+* spinor helicity formalism objects
+
+f braA, ketA, braB, ketB;
+cf spA(antisymmetric), spB(antisymmetric), spAA, spBB, spAB, spBA;
+
+
+***************************************************************************
 .global
