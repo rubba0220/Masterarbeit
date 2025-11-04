@@ -8,10 +8,9 @@ cf ten;
 
 #include declarations.h
 #include diags0l.out #d1
-#include terms.list
-
+#include color_decomposition/0L_d12T345.frm
 local test = (10*pp12
-+pp13);
++pp23);
 
 print
 .end
