@@ -48,7 +48,7 @@ cf DS, DG, DV;
 * vertex functions
 * non-commuting objects -> spinor space
 
-f G;
+f G, Gi, Gr;
 cf VVV;
 
 
@@ -72,11 +72,13 @@ AutoDeclare Symbol cOlc;
 
 ***************************************************************************
 * utilities for potentiation and other algebraic operations
+* gmunu not symmetric because it might already only contain relevant terms of replacing gamma matrices
 
 cf pow;
 s x,y,z;
 s n;
 cf delta(symmetric);
+cf gmunu;
 
 
 ***************************************************************************

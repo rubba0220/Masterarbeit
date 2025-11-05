@@ -12,10 +12,10 @@
 id DG(k?,0) = DS(k,0,1);
 
 * fermion propagator (fermion line number, momentum, mass)
-id SF(v?,k?,m?) = (g_(v,k)+m*gi_(v))*DS(k,m,1);
+id SF(v?,k?,m?) = (G(v,k)+m*Gi(v))*DS(k,m,1);
 
 * gamma matrix, e.g. quak-gauge boson vertex (fermion line number, Lorentz index) 
-id G(v?,mu?) = g_(v,mu);
+* id G(v?,mu?) = g_(v,mu);
 
 * factor out DV, do all replacements but keep brackets
 b DV;
