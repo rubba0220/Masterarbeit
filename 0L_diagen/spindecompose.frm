@@ -87,9 +87,9 @@ id UBar(p2,v0?)*Gr(v0?,?x)*V(p1,v0?)*VBar(p4,v1?)*Gr(v1?,?y,rho?)*U(p3,v1?)*EpsS
 
 ***************************************Minkowski in terms of Gram (p1,p2,p3,p4), still symbolic in gram inverse, see below
 *#include gmunu.out *to large expression to be feasable
-*id gmunu(mu?,nu?) = p1(mu)*p1(nu) + p1(mu)*p2(nu)  + p1(mu)*p3(nu)  + p2(mu)*p1(nu) + p2(mu)*p2(nu) + p2(mu)*p3(nu) + p2(mu)*p4(nu) + p3(mu)*p1(nu) + p3(mu)*p2(nu) + p3(mu)*p3(nu) + p3(mu)*p4(nu) + p4(mu)*p1(nu) + p4(mu)*p2(nu) + p4(mu)*p3(nu)  + p4(mu)*p4(nu);
+id gmunu(mu?,nu?) = p1(mu)*p1(nu) + p1(mu)*p2(nu)  + p1(mu)*p3(nu)  + p2(mu)*p1(nu) + p2(mu)*p2(nu) + p2(mu)*p3(nu) + p2(mu)*p4(nu) + p3(mu)*p1(nu) + p3(mu)*p2(nu) + p3(mu)*p3(nu) + p3(mu)*p4(nu) + p4(mu)*p1(nu) + p4(mu)*p2(nu) + p4(mu)*p3(nu)  + p4(mu)*p4(nu);
 
-id gmunu(mu?,nu?) = InvG11*p1(mu)*p1(nu)  + InvG12*(p1(mu)*p2(nu) + p2(mu)*p1(nu))  + InvG13*(p1(mu)*p3(nu) + p3(mu)*p1(nu))  + InvG14*(p1(mu)*p4(nu) + p4(mu)*p1(nu))  + InvG22*p2(mu)*p2(nu)  + InvG23*(p2(mu)*p3(nu) + p3(mu)*p2(nu))  + InvG24*(p2(mu)*p4(nu) + p4(mu)*p2(nu))  + InvG33*p3(mu)*p3(nu)  + InvG34*(p3(mu)*p4(nu) + p4(mu)*p3(nu))  + InvG44*p4(mu)*p4(nu);
+*id gmunu(mu?,nu?) = InvG11*p1(mu)*p1(nu)  + InvG12*(p1(mu)*p2(nu) + p2(mu)*p1(nu))  + InvG13*(p1(mu)*p3(nu) + p3(mu)*p1(nu))  + InvG14*(p1(mu)*p4(nu) + p4(mu)*p1(nu))  + InvG22*p2(mu)*p2(nu)  + InvG23*(p2(mu)*p3(nu) + p3(mu)*p2(nu))  + InvG24*(p2(mu)*p4(nu) + p4(mu)*p2(nu))  + InvG33*p3(mu)*p3(nu)  + InvG34*(p3(mu)*p4(nu) + p4(mu)*p3(nu))  + InvG44*p4(mu)*p4(nu);
 
 
 
