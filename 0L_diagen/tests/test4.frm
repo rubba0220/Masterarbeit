@@ -12,6 +12,14 @@ f aaa;
 
 local F = G(1, p1-p2);
 
+local testung = ten(p1, pp12, i0, pp23, i4)*ten(p1, pp12,i4);
+
+local testttt = gmunu(i1, i2)*p2(i2);
+
+id ten(p?, ?x, i0?)*ten(p?, ?y, i0?) = gmunu(mu,nu)*ten(p,?x,mu)*ten(p,?y,nu);
 id G(v?,p1?-p2?) = G(v,p1)+G(v,p2);
+
+id gmunu(mu?,nu?) = p(mu)*p1(nu);
+
 Splitarg, G;
 print;

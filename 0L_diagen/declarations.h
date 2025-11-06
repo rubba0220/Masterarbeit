@@ -16,7 +16,7 @@ i v;
   #enddo
 #enddo
 
-i mu, nu, rho, sigma, alpha, beta, gamma, delta, epsilon, zeta, eta, theta, lambda, kappa, tau, phi;
+i mu, nu, rho, sigma, alpha, beta, zeta, eta, theta, lambda, kappa, tau, phi;
 i i1,i2,i3,i4,a5;
 
 
@@ -89,4 +89,11 @@ cf spA(antisymmetric), spB(antisymmetric), spAA, spBB, spAB, spBA;
 
 
 ***************************************************************************
+* bullshit for bad way to decompose in tensor basis
+
+s InvG11, InvG12, InvG13, InvG14;
+s InvG21, InvG22, InvG23, InvG24;
+s InvG31, InvG32, InvG33, InvG34;
+s InvG41, InvG42, InvG43, InvG44;
+
 .global
