@@ -85,7 +85,7 @@ cf gmunu;
 * spinor helicity formalism objects
 
 f braA, ketA, braB, ketB;
-cf spA(antisymmetric), spB(antisymmetric), spAA, spBB, spAB, spBA;
+cf spA(antisymmetric), spB(antisymmetric), spAA, spBB, spAB, spBA, ispA(antisymmetric), ispB(antisymmetric);
 
 
 ***************************************************************************

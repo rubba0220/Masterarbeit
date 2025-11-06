@@ -8,7 +8,7 @@ Format 255;
 
 
 ***************************************color decomposition
-#include color_decomposition/0L_d12T435.out
+*#include color_decomposition/0L_d12T435.out
 id cOldel(i1,i2)*cOlT(i4,i3,a5)*NF^(-1) = 1;
 .sort
 
@@ -16,11 +16,11 @@ id cOldel(i1,i2)*cOlT(i4,i3,a5)*NF^(-1) = 1;
 id cOldel(i1,i4)*cOlT(i2,i3,a5) = 1;
 .sort
 
-#include color_decomposition/0L_d23T415.out
+*#include color_decomposition/0L_d23T415.out
 id cOldel(i2,i3)*cOlT(i4,i1,a5) = 1;
 .sort
 
-#include color_decomposition/0L_d34T215.out
+*#include color_decomposition/0L_d34T215.out
 id cOldel(i3,i4)*cOlT(i2,i1,a5)*NF^(-1) = 1;
 .sort
 
@@ -179,17 +179,54 @@ id p?vector_.q?vector_ = 1;
 
 ***************************************bracket all spinor stuff and perform spinor helicity state replacements 
 b V,VBar,Gr,U,UBar,EpsStar;
+print +s;
+.sort
 
-*id V(p1, v?) = (Gr(v,p1)-M*gi_(v)) * pow(spA(f1,n1),-1) * ketA(n1,v);
-*id UBar(p2,v?) = braA(n2,v) * (Gr(v,p2)+M*gi_(v)) * pow(spA(f2,n2),-1);
-*id U(p3, v?) = ketA(p3,v);
-*id VBar(p4,v?) = braA(p4,v);
+
+
+id V(p1, v?) = (Gr(v,p1)-M*Gi(v)) * ispA(f1,r1) * ketA(r1,v);
+id UBar(p2,v?) = braA(r2,v) * (Gr(v,p2)+M*Gi(v)) * ispA(f2,r2);
+id U(p3, v?) = ketA(p3,v);
+id VBar(p4,v?) = braA(p4,v);
 
 *id EpsStar(p?,p5) = pow(2, -1/2)*spA(k,p5)^(-1) * 2 * (ketA(k,v)*braB(p5,v)+ketB(p5,v)*braA(k1,v));
-*.sort
+
+.sort
+
+
+
+***************************************momentum conservation and splitting
+Argument Gr;
+id p1 = -p2+p5+p3+p4;
+EndArgument;
+
+Splitarg, Gr;
+
+repeat;
+id Gr(v?, p?) = G(v,p);
+id Gr(v?, p1?, ?p2) = Gr(v, p1) + Gr(v, ?p2);
+endrepeat;
+
+Factarg, G;
+
+id G(v?, p?vector_,-1,x?number_) = -x*G(v,p);
+id G(v?, p?vector_, x?number_) = x*G(v,p);
+
+.sort
+
+
+
+***************************************make gamma strings
+id Gi(?x) = 1;
+repeat id Gr(v?, ?x)*Gr(v?, ?y) = Gr(v, ?x, ?y);
+
+
+
+
 
 
 
 ***************************************output
+b braA, ketA, ispA, ispB, spA, spB, spAA, spBB, spAB, spBA;
 print +s;
 .end
