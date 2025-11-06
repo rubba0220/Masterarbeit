@@ -16,7 +16,7 @@ i v;
   #enddo
 #enddo
 
-i mu, nu, rho, sigma;
+i mu, nu, rho, sigma, alpha, beta, gamma, delta, epsilon, zeta, eta, theta, lambda, kappa, tau, phi;
 i i1,i2,i3,i4,a5;
 
 

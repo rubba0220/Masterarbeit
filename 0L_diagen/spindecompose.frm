@@ -7,40 +7,26 @@ Format 255;
 
 
 
-
-
-
-
-
-
-
-
+***************************************color decomposition
 #include color_decomposition/0L_d12T435.out
 id cOldel(i1,i2)*cOlT(i4,i3,a5)*NF^(-1) = 1;
 .sort
 
-*#include color_decomposition/0L_d14T235.out
-id cOldel(i1,i4)*cOlT(i2,i3,a5)*NF = 1;
+#include color_decomposition/0L_d14T235.out
+id cOldel(i1,i4)*cOlT(i2,i3,a5) = 1;
 .sort
 
-*#include color_decomposition/0L_d23T415.out
-id cOldel(i2,i3)*cOlT(i4,i1,a5)*NF = 1;
+#include color_decomposition/0L_d23T415.out
+id cOldel(i2,i3)*cOlT(i4,i1,a5) = 1;
 .sort
 
-*#include color_decomposition/0L_d34T215.out
-id cOldel(i3,i4)*cOlT(i2,i1,a5)*NF = 1;
+#include color_decomposition/0L_d34T215.out
+id cOldel(i3,i4)*cOlT(i2,i1,a5)*NF^(-1) = 1;
 .sort
 
 
 
-
-
-
-
-
-
-
-
+***************************************momentum conservation and splitting
 Argument G;
 id p5 = -p1-p2+p3+p4;
 EndArgument;
@@ -48,9 +34,9 @@ EndArgument;
 Splitarg, G;
 
 repeat;
-id G(v?, p1?, ?p2) = G(v, p1) + G(v, ?p2);
 id G(v?, p?) = Gr(v,p);
 id G(v?, v0l0?) = Gr(v, v0l0);
+id G(v?, p1?, ?p2) = G(v, p1) + G(v, ?p2);
 endrepeat;
 
 Factarg, Gr;
@@ -58,61 +44,93 @@ Factarg, Gr;
 id Gr(v?, p?vector_,-1,x?number_) = -x*Gr(v,p);
 id Gr(v?, p?vector_, x?number_) = x*Gr(v,p);
 
-*repeat id Gr(v?,v0l0?,p5,v1l1?) = -Gr(v,v0l0,p1,v1l1)-Gr(v,v0l0,p2,v1l1)+Gr(v,v0l0,p3,v1l1)+Gr(v,v0l0,p4,v1l1);
 .sort
 
 
 
-
-
-
+***************************************make gamma strings
+id Gi(?x) = 1;
 repeat id Gr(v?, ?x)*Gr(v?, ?y) = Gr(v, ?x, ?y);
 .sort
 
 
 
-
-
-
-
-id VBar(p4,v?)*Gr(v?,v0l0?,p3,v1l1?)*U(p3,v?) = VBar(p4,v)*Gr(v,v0l0)*2*p3(v1l1)*U(p3,v);
-id VBar(p4,v?)*Gr(v?,v0l0?,p4,v1l1?)*U(p3,v?) = VBar(p4,v)*2*p3(v0l0)*Gr(v,v1l1)*U(p3,v);
+***************************************standard order
+id VBar(p4,v0?)*Gr(v0?,?x)*U(p3,v0?)*UBar(p2,v1?)*Gr(v1?,?y)*V(p1,v1?) = UBar(p2,0)*Gr(0,?y)*V(p1,0)*VBar(p4,1)*Gr(1,?x)*U(p3,1);
 .sort
 
 
 
-
-
-
-
-id UBar(p2,v0?)*Gr(v0?,v0l0?)*V(p1,v0?)*VBar(p4,v1?)*Gr(v1?,v0l0?)*U(p3,v1?) =  UBar(p2,v0)*gmunu(mu,nu)*Gr(v0,mu)*V(p1,v0)*VBar(p4,v1)*Gr(v1,nu)*U(p3,v1);
-id UBar(p2,v0?)*Gr(v0?,v0l0?)*V(p1,v0?)*VBar(p4,v1?)*Gr(v1?,v0l0?,p?,v1l1?)*U(p3,v1?) =  UBar(p2,v0)*gmunu(mu,nu)*Gr(v0,mu)*V(p1,v0)*VBar(p4,v1)*Gr(v1,v1l1,p,nu)*U(p3,v1);
-id VBar(p4,v0?)*Gr(v0?,v1l1?,p?,v0l0?)*U(p3,v0?)*UBar(p2,v1?)*Gr(v1?,v0l0?)*V(p1,v1?) =  VBar(p4,v0)*Gr(v0,v1l1,p,nu)*U(p3,v0)*UBar(p2,v1)*gmunu(mu,nu)*Gr(v1,mu)*V(p1,v1);
+***************************************standard indices
+id UBar(p2,0)*Gr(0,?x,v0l0?,?y)*V(p1,0)*VBar(p4,1)*Gr(1,?z)*U(p3,1)*EpsStar(v0l0?,p5) = UBar(p2,0)*Gr(0,?x,rho,?y)*V(p1,0)*VBar(p4,1)*Gr(1,?z)*U(p3,1)*EpsStar(rho,p5);
+id UBar(p2,0)*Gr(0,?x)*V(p1,0)*VBar(p4,1)*Gr(1,?y, v0l0?,?z)*U(p3,1)*EpsStar(v0l0?,p5) = UBar(p2,0)*Gr(0,?x)*V(p1,0)*VBar(p4,1)*Gr(1,?y,rho,?z)*U(p3,1)*EpsStar(rho,p5);
 .sort
 
 
 
-
-
-
-
-
-
-
-
-#include gmunu.out
-id pow(?x) = 1;
-id pp12 = 1;
-id pp23 = 1;
-id pp34 = 1;
-id pp45 = 1;
-id pp15 = 1;
-id M = 1;
+***************************************contract lorentzindices between different strings
+id UBar(p2,v0?)*Gr(v0?,v0l0?,?x)*V(p1,v0?)*VBar(p4,v1?)*Gr(v1?,v0l0?,?y)*U(p3,v1?) = UBar(p2,v0)*gmunu(alpha,beta)*Gr(v0,beta,?x)*V(p1,v0)*VBar(p4,v1)*Gr(v1,alpha,?y)*U(p3,v1);
+id UBar(p2,v0?)*Gr(v0?,v0l0?,?x)*V(p1,v0?)*VBar(p4,v1?)*Gr(v1?,?y,v0l0?)*U(p3,v1?) = UBar(p2,v0)*gmunu(alpha,beta)*Gr(v0,beta,?x)*V(p1,v0)*VBar(p4,v1)*Gr(v1,?y,alpha)*U(p3,v1);
+id UBar(p2,v0?)*Gr(v0?,?x,v0l0?)*V(p1,v0?)*VBar(p4,v1?)*Gr(v1?,?y,v0l0?)*U(p3,v1?) = UBar(p2,v0)*gmunu(alpha,beta)*Gr(v0,?x,beta)*V(p1,v0)*VBar(p4,v1)*Gr(v1,?y,alpha)*U(p3,v1);
+id UBar(p2,v0?)*Gr(v0?,?x,v0l0?)*V(p1,v0?)*VBar(p4,v1?)*Gr(v1?,v0l0?,?y)*U(p3,v1?) = UBar(p2,v0)*gmunu(alpha,beta)*Gr(v0,?x,beta)*V(p1,v0)*VBar(p4,v1)*Gr(v1,alpha,?y)*U(p3,v1);
 .sort
 
 
 
+***************************************contract lorentzindices between strings and EpsStar
+id UBar(p2,v0?)*Gr(v0?,rho?,?x)*V(p1,v0?)*VBar(p4,v1?)*Gr(v1?,?y)*U(p3,v1?)*EpsStar(rho?,p5) = gmunu(kappa,phi) * UBar(p2,v0)*Gr(v0,phi,?x)*V(p1,v0)*VBar(p4,v1)*Gr(v1,?y)*U(p3,v1)*EpsStar(kappa,p5);
+id UBar(p2,v0?)*Gr(v0?,?x,rho?)*V(p1,v0?)*VBar(p4,v1?)*Gr(v1?,?y)*U(p3,v1?)*EpsStar(rho?,p5) = gmunu(kappa,phi) * UBar(p2,v0)*Gr(v0,?x,phi)*V(p1,v0)*VBar(p4,v1)*Gr(v1,?y)*U(p3,v1)*EpsStar(kappa,p5);
+id UBar(p2,v0?)*Gr(v0?,?x)*V(p1,v0?)*VBar(p4,v1?)*Gr(v1?,rho?,?y)*U(p3,v1?)*EpsStar(rho?,p5) = gmunu(kappa,phi) * UBar(p2,v0)*Gr(v0,?x)*V(p1,v0)*VBar(p4,v1)*Gr(v1,phi,?y)*U(p3,v1)*EpsStar(kappa,p5);
+id UBar(p2,v0?)*Gr(v0?,?x)*V(p1,v0?)*VBar(p4,v1?)*Gr(v1?,?y,rho?)*U(p3,v1?)*EpsStar(rho?,p5) = gmunu(kappa,phi) * UBar(p2,v0)*Gr(v0,?x)*V(p1,v0)*VBar(p4,v1)*Gr(v1,?y,phi)*U(p3,v1)*EpsStar(kappa,p5);
+.sort
 
+
+
+***************************************Minkowski in terms of Gram (p1,p2,p3,p4)
+*#include gmunu.out
+*id gmunu(mu,nu) = p1(mu)*p1(nu)*pp12 + p1(mu)*p2(nu)*pp23  + p1(mu)*p3(nu)*pp34/pp12  + p2(mu)*p1(nu)*pp12 + p2(mu)*p2(nu)*pp23 + p2(mu)*p3(nu)*pp23 + p2(mu)*p4(nu)*pp23 + p3(mu)*p1(nu)*pp34 + p3(mu)*p2(nu)*pp34+ p3(mu)*p3(nu)*pp23+ p3(mu)*p4(nu)*pp34 + p4(mu)*p1(nu)*pp45 + p4(mu)*p2(nu)*pp15 + p4(mu)*p3(nu)*pp34  + p4(mu)*p4(nu)*pp23;
+id pow(?x) = 1/23;
+id pp12 = 2/11;
+id pp23 = 1/67;
+id pp34 = 1/3;
+id pp45 = 1/101;
+id pp15 = 23/2;
+id M = 4/119;
+.sort
+
+
+
+***************************************Dirac equation
+id VBar(p4,v?)*Gr(v?,?x,p3,v1l1?)*U(p3,v?) = VBar(p4,v)*Gr(v,?x)*2*p3(v1l1)*U(p3,v);
+id VBar(p4,v?)*Gr(v?,v0l0?,p4,?y)*U(p3,v?) = VBar(p4,v)*2*p3(v0l0)*Gr(v,?y)*U(p3,v);
+id UBar(p2,v?)*Gr(v?,?x,p1,v1l1?)*V(p1,v?) = UBar(p2,v)*Gr(v,?x)*2*p1(v1l1)*V(p1,v);
+id UBar(p2,v?)*Gr(v?,v0l0?,p2,?x)*V(p1,v?) = UBar(p2,v)*2*p2(v0l0)*Gr(v,?x)*V(p1,v);
+id UBar(p2,v?)*Gr(v?,p2,?x)*V(p1,v?) = 0;
+id UBar(p2,v?)*Gr(v?,?x,p1)*V(p1,v?) = 0;
+id VBar(p4, v?)*Gr(v?,p4,?x)*U(p3,v?) = 0;
+id VBar(p4, v?)*Gr(v?,?x,p3)*U(p3,v?) = 0;
+.sort
+
+
+
+***************************************reduction of slashed squares
+id Gr(v?, ?x, p?, p?, ?y) = p.p * Gr(v, ?x, ?y);
+id p1.p1 = M^2;
+id p2.p2 = M^2;
+id p3.p3 = 0;
+id p4.p4 = 0;
+id p5.p5 = 0;
+.sort
+
+
+
+***************************************replace p1, p2 in eps prods
+id EpsStar(p4,p5) = -EpsStar(p3,p5)+EpsStar(p1,p5)+EpsStar(p2,p5);
+.sort
+
+
+
+***************************************bracket all spinor stuff and perform spinor helicity state replacements 
 b V,VBar,Gr,U,UBar,EpsStar;
 
 *id V(p1, v?) = (Gr(v,p1)-M*gi_(v)) * pow(spA(f1,n1),-1) * ketA(n1,v);
@@ -124,5 +142,7 @@ b V,VBar,Gr,U,UBar,EpsStar;
 *.sort
 
 
+
+***************************************output
 print +s;
 .end
