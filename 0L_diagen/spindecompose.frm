@@ -164,14 +164,14 @@ id EpsStar(p4,p5) = -EpsStar(p3,p5)+EpsStar(p1,p5)+EpsStar(p2,p5);
 
 
 ***************************************Plug in bullshit to figure out spinor structures
-*id pow(?x) = 1/23;
-*id pp12 = 2/11;
-*id pp23 = 1/67;
-*id pp34 = 1/3;
-*id pp45 = 1/101;
-*id pp15 = 23/2;
-*id M = 4/119;
-*id p?vector_.q?vector_ = 1;
+id pow(?x) = 1/23;
+id pp12 = 2/11;
+id pp23 = 1/67;
+id pp34 = 1/3;
+id pp45 = 1/101;
+id pp15 = 23/2;
+id M = 4/119;
+id p?vector_.q?vector_ = 1;
 
 *.sort
 
@@ -181,11 +181,11 @@ id EpsStar(p4,p5) = -EpsStar(p3,p5)+EpsStar(p1,p5)+EpsStar(p2,p5);
 b V,VBar,Gr,U,UBar,EpsStar;
 
 *id V(p1, v?) = (Gr(v,p1)-M*gi_(v)) * pow(spA(f1,n1),-1) * ketA(n1,v);
+*id UBar(p2,v?) = braA(n2,v) * (Gr(v,p2)+M*gi_(v)) * pow(spA(f2,n2),-1);
 *id U(p3, v?) = ketA(p3,v);
 *id VBar(p4,v?) = braA(p4,v);
-*id UBar(p2,v?) = braA(n2,v) * (Gr(v,p2)+M*gi_(v)) * pow(spA(f2,n2),-1);
 
-*id Gr(v?, ?v0l0, v0l1?, ?v0l2) * EpsStar(v0l1?, p5) = pow(2, -1/2)*pow(spA(k1,p5),-1) * Gr(v, ?v0l0) * 2 * (ketA(k1,v)*braB(p5,v)+ketB(p5,v)*braA(k1,v)) * Gr(v, ?v0l2);
+*id EpsStar(p?,p5) = pow(2, -1/2)*spA(k,p5)^(-1) * 2 * (ketA(k,v)*braB(p5,v)+ketB(p5,v)*braA(k1,v));
 *.sort
 
 
