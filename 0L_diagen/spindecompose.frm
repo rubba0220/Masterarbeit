@@ -112,7 +112,7 @@ id Gr(v?,p?,q?,p?) = 2*p.q*Gr(v,p)-p.p*Gr(v,q);
 id Gr(v?, ?x, p?, p?, ?y) = p.p * Gr(v, ?x, ?y);
 endrepeat;
 
-id p1.p1 = M^2;
+id p1.p1 = M^2; *could be sone later but might reduce number of terms
 id p2.p2 = M^2;
 id p3.p3 = 0;
 id p4.p4 = 0;
@@ -151,12 +151,29 @@ id UBar(p2,v?)*Gr(v?,v0l0?index_,p2,?x)*V(p1,v?) = UBar(p2,v)*(Gr(v,?x)*2*p2(v0l
 id VBar(p4,v?)*Gr(v?,?p,p3,q?vector_,?k)*U(p3,v?) = VBar(p4,v)*(2*p3.q*Gr(v,?p,?k)-Gr(v,?p,q,p3,?k))*U(p3,v);
 id VBar(p4,v?)*Gr(v?,?p,q?vector_,p4,?k)*U(p3,v?) = VBar(p4,v)*(2*p4.q*Gr(v,?p,?k)-Gr(v,?p,p4,q,?k))*U(p3,v);
 
-id UBar(p2,v?)*Gr(v?,?p,p1,q?vector_,?k)*V(p1,v?) = UBar(p2,v)*(2*p1.p*Gr(v,?p,?k)-Gr(v,?p,q,p1,?k))*V(p1,v);
-id UBar(p2,v?)*Gr(v?,?p,q?vector_,p2,?k)*V(p1,v?) = UBar(p2,v)*(2*p2.p*Gr(v,?p,?k)-Gr(v,?p,p2,q,?k))*V(p1,v);
+id UBar(p2,v?)*Gr(v?,?p,p1,q?vector_,?k)*V(p1,v?) = UBar(p2,v)*(2*p1.q*Gr(v,?p,?k)-Gr(v,?p,q,p1,?k))*V(p1,v);
+id UBar(p2,v?)*Gr(v?,?p,q?vector_,p2,?k)*V(p1,v?) = UBar(p2,v)*(2*p2.q*Gr(v,?p,?k)-Gr(v,?p,p2,q,?k))*V(p1,v);
 endrepeat;
 
-
 id Gr(0) = 1;
+
+repeat;
+id p1.p1 = M^2;
+id p2.p2 = M^2;
+id p3.p3 = 0;
+id p4.p4 = 0;
+id p5.p5 = 0;
+id p1.p2 = pp12;
+id p2.p3 = pp23;
+id p3.p4 = pp34;
+id p4.p5 = pp45;
+id p1.p5 = pp15;
+id p3.p5 = -p1.p3-pp23-pp34;
+id p2.p5 = -pp12-M^2-pp23-p2.p4;
+id p1.p3 = -M^2-pp12-p1.p4-pp15;
+id p2.p4 = -p1.p4-pp34-pp45;
+id p1.p4 = pp23-pp45-pp15;
+endrepeat;
 
 .sort
 
@@ -175,12 +192,6 @@ id EpsStar(p4,p5) = -EpsStar(p3,p5)+EpsStar(p1,p5)+EpsStar(p2,p5);
 
 
 
-***************************************plug in Inverse Gram in terms of invariants
-*#include gdecomp.out
-*.sort
-
-
-
 ***************************************Plug in bullshit to print part in progress
 *id pow(?x) = 1/23;
 *id pp12 = 2/11;
@@ -189,12 +200,11 @@ id EpsStar(p4,p5) = -EpsStar(p3,p5)+EpsStar(p1,p5)+EpsStar(p2,p5);
 *id pp45 = 1/101;
 *id pp15 = 23/2;
 *id M = 4/119;
-*id p?vector_.q?vector_ = 1;
 *repeat id x?{InvG11,InvG12,InvG13,InvG14,InvG22,InvG23,InvG24,InvG33,InvG34,InvG44} = 1;
 
 *b V,VBar,Gr,U,UBar,EpsStar;
 *print +s; *correct tensor basis brute force reproduced
-.sort
+*.sort
 
 
 
@@ -206,6 +216,17 @@ id EpsStar(p4,p5) = -EpsStar(p3,p5)+EpsStar(p1,p5)+EpsStar(p2,p5);
 
 ***************************************helicity configuration choice (normalization: no -sqrt2)
 id VBar(p4,1)*Gr(1,p?)*U(p3,1)*EpsStar(q?,p5) = braA(p4,1)*Gr(1,p,p3,q)*ketB(p5,1)*ispA(p5,p3);
+
+
+
+***************************************reduction of slashed squares
+repeat;
+id Gr(1,p?,p?) = p.p;
+id Gr(1,p?,q?,p?) = 2*p.q*Gr(1,p)-p.p*Gr(1,q);
+id Gr(1, ?x, p?, p?, ?y) = p.p * Gr(1, ?x, ?y);
+endrepeat;
+
+.sort
 
 
 
@@ -233,36 +254,30 @@ id p2.p4 = -p1.p4-pp34-pp45;
 id p1.p4 = pp23-pp45-pp15;
 endrepeat;
 
-
-
-***************************************Plug in bullshit to print part in progress
-id pow(?x) = 1/23;
-id pp12 = 2/11;
-id pp23 = 1/67;
-id pp34 = 1/3;
-id pp45 = 1/101;
-id pp15 = 23/2;
-id M = 4/119;
-id p?vector_.q?vector_ = 1;
-repeat id x?{InvG11,InvG12,InvG13,InvG14,InvG22,InvG23,InvG24,InvG33,InvG34,InvG44} = 1;
-
-b braA, braB, ketA, ketB, ispA, ispB, spAA, spBB, spAB, spBA, G;
-print +s;
 .sort
 
 
 
+***************************************replace p1 via momentum conservation and apply Dirac/asymmetry of brackets
+id Gr(1,p1) = -Gr(1,p2)+Gr(1,p3)+Gr(1,p4)+Gr(1,p5);
+id Gr(1,p5)*ketB(p5,1) = 0;
+
+
+
+***************************************contract brackets
+id braA(p4,1)*Gr(1,p?{p3,p4})*ketB(p5,1) = spA(p4,p)*spB(p,p5);
+
+
+
+********************************************************************************************************************************
+* third step: perform spinor helicity formalism on p1,p2,p3 part
+********************************************************************************************************************************
+
+
+
 ***************************************perform spinor helicity state replacements
-*id V(p1, v?) = (G(v,p1)-M*Gi(v)) * ispA(f1,r1) * ketA(r1,v);
-*id UBar(p2,v?) = braA(r2,v) * (G(v,p2)+M*Gi(v)) * ispA(f2,r2);
-*id U(p3, v?) = ketA(p3,v);
-*id VBar(p4,v?) = braA(p4,v);
-
-*id EpsStar(p?,p5) = pow(2, -1/2)*spA(k,p5)^(-1) * 2 * (ketA(k,v)*braB(p5,v)+ketB(p5,v)*braA(k1,v));
-
-*b braA, ketA, ispA, ispB, spA, spB, spAA, spBB, spAB, spBA;
-*print +s;
-*.sort
+id V(p1, v?) = (G(v,p1)-M*Gi(v)) * ispA(f1,r1) * ketA(r1,v);
+id UBar(p2,v?) = braA(r2,v) * (G(v,p2)+M*Gi(v)) * ispA(f2,r2);
 
 
 
@@ -287,59 +302,195 @@ id Gr(v?, p?vector_, x?number_) = x*Gr(v,p);
 
 
 
-
 ***************************************make gamma strings
-id Gi(?x) = 1;
-repeat id Gr(v?, ?x)*Gr(v?, ?y) = Gr(v, ?x, ?y);
+id Gi(0) = 1;
+repeat id Gr(0, ?x)*Gr(0, ?y) = Gr(0, ?x, ?y);
+
+
+
+**************************************replace p3/4 p5 and correct order
+id Gr(0,p3,p5) = pow(2*p3.p4,-1)*( Gr(0,p3,p5,p4,p3)+2*p3.p5*Gr(0,p3,p4) );
+id Gr(0,p4,p5) = pow(2*p3.p4,-1)*( Gr(0,p4,p5,p3,p4)+2*p4.p5*Gr(0,p4,p3) );
+id Gr(0,p4,p3) = -Gr(0,p3,p4)+2*p3.p4;
+
+
+
+**************************************bring p2 to same position
+id braA(r2,0)*Gr(0,p2,p?)*ketA(r1,0) = braA(r2,0)*ketA(r1,0)*2*p2.p - braA(r2,0)*Gr(0,p,p2)*ketA(r1,0);
+.sort
 
 
 
 ***************************************reduction of slashed squares
 repeat;
-id Gr(v?,p?,p?) = p.p;
-id Gr(v?,p?,q?,p?) = 2*p.q*Gr(v,p)-p.p*Gr(v,q);
-id Gr(v?, ?x, p?, p?, ?y) = p.p * Gr(v, ?x, ?y);
+id Gr(0,p?,p?) = p.p;
+id Gr(0,?k1,p?,q?,p?,?k2) = 2*p.q*Gr(0,?k1,p,?k2)-p.p*Gr(0,?k1,q,?k2);
+id Gr(0,?k1,p?,q?,k?,p?,?k2) = 2*p.k*Gr(0,?k1,p,q,?k2)-2*p.q*Gr(0,?k1,p,k,?k2)+p.p*Gr(0,?k1,q,k,?k2);
+id Gr(0, ?x, p?, p?, ?y) = p.p * Gr(0, ?x, ?y);
 endrepeat;
 
+.sort
+
+
+
+***************************************close brackets
+id braA(r2,0)*ketA(r1,0) = spA(r2,r1);
+id braA(r2,0)*Gr(0,p?{p3,p4},q?{p3,p4})*ketA(r1,0) = spA(r2,p)*spB(p,q)*spA(q,r1);
+
+id braA(r2,0)*Gr(0,p?)*ketA(r1,0) =  0;
+id braA(r2,0)*Gr(0,p?,q?,k?)*ketA(r1,0) = 0;
+
+id braA(r2,0)*Gr(0,p3,p5,p4,p3)*ketA(r1,0) = spA(r2,p3)*spBB(p3,p5,p4,p3)*spA(p3,r1);
+id braA(r2,0)*Gr(0,p4,p5,p3,p4)*ketA(r1,0) = spA(r2,p4)*spBB(p4,p5,p3,p4)*spA(p4,r1);
+
+
+
+***************************************close p2 brackets via massless decomposition
+id Gr(?x) = G(?x);
+
+repeat;
+id G(v?, p?) = Gr(v,p);
+id G(v?, p1?, ?p2) = G(v, p1) * G(v, ?p2);
+endrepeat;
+
+Argument Gr;
+id p1 = f1 + r1;
+id p2 = f2 + r2;
+EndArgument;
+
+Splitarg, Gr;
+
+repeat;
+id Gr(v?, p?) = G(v,p);
+id Gr(v?, p1?, ?p2) = Gr(v, p1) + Gr(v, ?p2);
+endrepeat;
+
+id G(v?,r1) = M^2*pow(f1.r1)*G(v,r1);
+id G(v?,r2) = M^2*pow(f2.r2)*G(v,r2);
+
+id braA(r2,0)*G(0,r2) = 0;
+
+repeat;
+id braA(p?,v?)*G(v?,q?) = spA(p,q)*braB(q,v);
+id braB(p?,v?)*G(v?,q?) = spB(p,q)*braA(q,v);
+endrepeat;
+
+id braA(p?,v?)*ketA(q?,v?) = spA(p,q);
+id braB(p?,v?)*ketB(q?,v?) = spB(p,q);
+
+repeat id G(v?, ?x)*G(v?, ?y) = G(v, ?x, ?y);
+id braA(p?,v?)*G(v?,?x)*ketA(q?,v?) = spAA(p,?x,q);
+id braA(p?,v?)*G(v?,?x)*ketB(q?,v?) = spAB(p,?x,q);
+
+.sort
+
+
+
+
+
+***************************************plug in Inverse Gram in terms of invariants
+#include gscaledecomp_elements.out
+
+.sort
+
+
+
+***************************************invariants
+repeat;
 id p1.p1 = M^2;
 id p2.p2 = M^2;
 id p3.p3 = 0;
 id p4.p4 = 0;
 id p5.p5 = 0;
+id p1.p2 = pp12;
+id p2.p3 = pp23;
+id p3.p4 = pp34;
+id p4.p5 = pp45;
+id p1.p5 = pp15;
+id p3.p5 = -p1.p3-pp23-pp34;
+id p2.p5 = -pp12-M^2-pp23-p2.p4;
+id p1.p3 = -M^2-pp12-p1.p4-pp15;
+id p2.p4 = -p1.p4-pp34-pp45;
+id p1.p4 = pp23-pp45-pp15;
+endrepeat;
 
 .sort
 
-**************************************replace p3,4 p5
-*id Gr(0,p3,p5) = pow(2*p3.p4,-1)*( Gr(0,p3,p5,p4,p3)+2*p3.p5*G(0,p3,p4) );
-*id Gr(0,p4,p5) = pow(2*p3.p4,-1)*( Gr(0,p4,p5,p3,p4)+2*p4.p5*G(0,p4,p3) );
+
+
+***************************************set all good structures to one to work better
+id ispA(f1,r1) = 1;
+id ispA(f2,r2) = 1;
+
+id spA(p3,p4)*spB(p3,p5)*ispA(p3,p5) = 1;
+
+
+*id spA(p3,r1) = 1;
+*id spA(p3,r2) = 1;
+*id spB(p3,p5) = 1;
+*id spBB(p3,p5,p4,p3) = 1;
+*id spA(p4,r1) = 1;
+*id spA(p4,r2) = 1;
+*id spBB(p4,p5,p3,p4) = 1;
+*id spA(r1,r2) = 1;
+*id spB(p3,p4) = 1;
 
 
 
-***************************************change to G
+***************************************Plug in bullshit to print part in progress
+id pow(?x) = 1;
+id pp12 = 2;
+id pp23 = 3;
+id pp34 = 2;
+id pp45 = 1;
+id pp15 = 2;
+id M = 5;
+
+*repeat id x?{InvG11,InvG12,InvG13,InvG14,InvG22,InvG23,InvG24,InvG33,InvG34,InvG44} = 1;
+*id InvG11 = 1;
+*id InvG12 = 1;
+*id InvG13 = 1;
+*id InvG14 = 1;
+*id InvG22 = 2;
+*id InvG23 = 2;
+*id InvG24 = 2;
+*id InvG33 = 3;
+*id InvG34 = 3;
+*id InvG44 = 4;
+
+b braA, braB, ketA, ketB, ispA, ispB, spA,spB, spAA, spBB, spAB, spBA, G;
+print +s;
+.sort
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**************************************change to G
 *id Gr(?x) = G(?x);
 
-
-
-
-
 ***************************************close brackets
-id braA(r2,0)*G(0,p2,p?)*ketA(r1,0) = spA(r2,r1)*p2.p - braA(r2,0)*G(0,p,p2)*ketA(r1,0);
-id braA(r2,0)*ketA(r1,0) = spA(p,q);
-id braA(r2,0)*G(0,p1?{p3,p4},p2?{p3,p4})*ketA(r1,0) = spA(p,p3)*spB(p3,p4)*spA(p4,q);
+*id braA(r2,0)*G(0,p2,p?)*ketA(r1,0) = spA(r2,r1)*p2.p - braA(r2,0)*G(0,p,p2)*ketA(r1,0);
+*id braA(r2,0)*ketA(r1,0) = spA(p,q);
+*id braA(r2,0)*G(0,p1?{p3,p4},p2?{p3,p4})*ketA(r1,0) = spA(p,p3)*spB(p3,p4)*spA(p4,q);
 
-id braA(r2,0)*G(0,p?)*ketA(r1,0) =  0;
-id braA(r2,0)*G(0,p?,q?,k?)*ketA(r1,0) = 0;
-
-
+*id braA(r2,0)*G(0,p?)*ketA(r1,0) =  0;
+*id braA(r2,0)*G(0,p?,q?,k?)*ketA(r1,0) = 0;
 
 
-***************************************set good p1,p2 structures to numeric bullshit to work on p3,p4,p5 part and problem part
-id ispA(p1?,p2?) = 1/11;
-id ispB(p1?,p2?) =   2/13;
-id spA(p1?,p2?) = 3/62;
-id spB(p1?,p2?) = 101;
-id braA(r2,0)*G(0,p4,p5,p3,p4)*ketA(r1,0) = 1;
-id braA(r2,0)*G(0,p3,p5,p4,p3)*ketA(r1,0) = 1;
 
 
 

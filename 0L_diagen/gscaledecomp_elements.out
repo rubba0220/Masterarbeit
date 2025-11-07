@@ -1,0 +1,16 @@
+id InvG11 = 2*pp23*(pp15 - pp23 - pp34)*pp34 - M^2*pp34^2;
+id InvG21 = pp12*pp34^2 - pp23*pp34*(-pp15 + pp23 - pp45) - (pp15 - pp23 - pp34)*pp34*(-M^2 - pp12 - pp23 + pp45);
+id InvG31 = -(pp12*(pp15 - pp23 - pp34)*pp34) - pp23*(pp15 - pp23 - pp34)*(-pp15 + pp23 - pp45) + M^2*pp34*(-pp15 + pp23 - pp45) + (pp15 - pp23 - pp34)^2*(-M^2 - pp12 - pp23 + pp45);
+id InvG41 = -(pp12*pp23*pp34) + pp23^2*(-pp15 + pp23 - pp45) - pp23*(pp15 - pp23 - pp34)*(-M^2 - pp12 - pp23 + pp45) + M^2*pp34*(-M^2 - pp12 - pp23 + pp45);
+id InvG12 = pp12*pp34^2 - pp23*pp34*(-pp15 + pp23 - pp45) - (pp15 - pp23 - pp34)*pp34*(-M^2 - pp12 - pp23 + pp45);
+id InvG22 = -(M^2*pp34^2) + 2*pp34*(-pp15 + pp23 - pp45)*(-M^2 - pp12 - pp23 + pp45);
+id InvG32 = M^2*(pp15 - pp23 - pp34)*pp34 - pp12*pp34*(-pp15 + pp23 - pp45) + pp23*(-pp15 + pp23 - pp45)^2 - (pp15 - pp23 - pp34)*(-pp15 + pp23 - pp45)*(-M^2 - pp12 - pp23 + pp45);
+id InvG42 = M^2*pp23*pp34 - pp12*pp34*(-M^2 - pp12 - pp23 + pp45) - pp23*(-pp15 + pp23 - pp45)*(-M^2 - pp12 - pp23 + pp45) + (pp15 - pp23 - pp34)*(-M^2 - pp12 - pp23 + pp45)^2;
+id InvG13 = -(pp12*(pp15 - pp23 - pp34)*pp34) - pp23*(pp15 - pp23 - pp34)*(-pp15 + pp23 - pp45) + M^2*pp34*(-pp15 + pp23 - pp45) + (pp15 - pp23 - pp34)^2*(-M^2 - pp12 - pp23 + pp45);
+id InvG23 = M^2*(pp15 - pp23 - pp34)*pp34 - pp12*pp34*(-pp15 + pp23 - pp45) + pp23*(-pp15 + pp23 - pp45)^2 - (pp15 - pp23 - pp34)*(-pp15 + pp23 - pp45)*(-M^2 - pp12 - pp23 + pp45);
+id InvG33 = -(M^2*(pp15 - pp23 - pp34)^2) + 2*pp12*(pp15 - pp23 - pp34)*(-pp15 + pp23 - pp45) - M^2*(-pp15 + pp23 - pp45)^2;
+id InvG43 = M^2*pp23*(pp15 - pp23 - pp34) - M^4*pp34 + pp12^2*pp34 - pp12*pp23*(-pp15 + pp23 - pp45) - pp12*(pp15 - pp23 - pp34)*(-M^2 - pp12 - pp23 + pp45) + M^2*(-pp15 + pp23 - pp45)*(-M^2 - pp12 - pp23 + pp45);
+id InvG14 = -(pp12*pp23*pp34) + pp23^2*(-pp15 + pp23 - pp45) - pp23*(pp15 - pp23 - pp34)*(-M^2 - pp12 - pp23 + pp45) + M^2*pp34*(-M^2 - pp12 - pp23 + pp45);
+id InvG24 = M^2*pp23*pp34 - pp12*pp34*(-M^2 - pp12 - pp23 + pp45) - pp23*(-pp15 + pp23 - pp45)*(-M^2 - pp12 - pp23 + pp45) + (pp15 - pp23 - pp34)*(-M^2 - pp12 - pp23 + pp45)^2;
+id InvG34 = M^2*pp23*(pp15 - pp23 - pp34) - M^4*pp34 + pp12^2*pp34 - pp12*pp23*(-pp15 + pp23 - pp45) - pp12*(pp15 - pp23 - pp34)*(-M^2 - pp12 - pp23 + pp45) + M^2*(-pp15 + pp23 - pp45)*(-M^2 - pp12 - pp23 + pp45);
+id InvG44 = -(M^2*pp23^2) + 2*pp12*pp23*(-M^2 - pp12 - pp23 + pp45) - M^2*(-M^2 - pp12 - pp23 + pp45)^2;

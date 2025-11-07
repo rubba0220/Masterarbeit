@@ -76,6 +76,7 @@ AutoDeclare Symbol cOlc;
 
 cf pow;
 s x,y,z;
+s s1,s2,s3,s4,s5,s6,s7,s8,s9,s10;
 s n;
 cf delta(symmetric);
 cf gmunu;
@@ -95,5 +96,6 @@ s InvG11, InvG12, InvG13, InvG14;
 s InvG21, InvG22, InvG23, InvG24;
 s InvG31, InvG32, InvG33, InvG34;
 s InvG41, InvG42, InvG43, InvG44;
+s InvGfac;
 
 .global
