@@ -8,7 +8,7 @@ Format 255;
 
 
 ***************************************color decomposition
-*#include color_decomposition/0L_d12T435.out
+#include color_decomposition/0L_d12T435.out
 id cOldel(i1,i2)*cOlT(i4,i3,a5)*NF^(-1) = 1;
 .sort
 
@@ -16,11 +16,11 @@ id cOldel(i1,i2)*cOlT(i4,i3,a5)*NF^(-1) = 1;
 id cOldel(i1,i4)*cOlT(i2,i3,a5) = 1;
 .sort
 
-*#include color_decomposition/0L_d23T415.out
+#include color_decomposition/0L_d23T415.out
 id cOldel(i2,i3)*cOlT(i4,i1,a5) = 1;
 .sort
 
-*#include color_decomposition/0L_d34T215.out
+#include color_decomposition/0L_d34T215.out
 id cOldel(i3,i4)*cOlT(i2,i1,a5)*NF^(-1) = 1;
 .sort
 
@@ -186,14 +186,21 @@ id UBar(p2,v?)*Gr(v?,p4,p3)*V(p1,v?) = UBar(p2,v)*(2*p3.p4-Gr(v,p3,p4))*V(p1,v);
 
 
 
-***************************************replace p1, p2 in eps prods
+***************************************replace p4 in eps prods
 id EpsStar(p4,p5) = -EpsStar(p3,p5)+EpsStar(p1,p5)+EpsStar(p2,p5);
+.sort
+
+
+
+***************************************gauge choice p3*epsStar = 0 (q=p3)
+id EpsStar(p3,p5) = 0;
 .sort
 
 
 
 ***************************************Plug in bullshit to print part in progress
 *id pow(?x) = 1/23;
+*#include gscaledecomp_elements.out
 *id pp12 = 2/11;
 *id pp23 = 1/67;
 *id pp34 = 1/3;
@@ -201,8 +208,12 @@ id EpsStar(p4,p5) = -EpsStar(p3,p5)+EpsStar(p1,p5)+EpsStar(p2,p5);
 *id pp15 = 23/2;
 *id M = 4/119;
 *repeat id x?{InvG11,InvG12,InvG13,InvG14,InvG22,InvG23,InvG24,InvG33,InvG34,InvG44} = 1;
+*repeat id x?{InvG11,InvG13, InvG34}=1;
+*repeat id x?{InvG12,InvG14,InvG23,InvG44}=3;
+*repeat id x?{InvG22,InvG33,InvG24}=5;
 
 *b V,VBar,Gr,U,UBar,EpsStar;
+*b V,VBar,Gr,U,UBar;
 *print +s; *correct tensor basis brute force reproduced
 *.sort
 
@@ -232,7 +243,6 @@ endrepeat;
 
 ***************************************bring all gamma strings in uniform order
 * expect cancellation from terms containing slashed p1,p2 once momentum conservation applied
-id Gr(1,p?,q?,p?) = 2*p.q*Gr(1,p)-p.p*Gr(1,q);
 id Gr(1,p1,p3,p2) = 2*p3.p2*Gr(1,p1)-Gr(1,p1,p2,p3);
 id Gr(1,p2,p3,p1) = 2*p3.p1*Gr(1,p2)-2*p1.p2*Gr(1,p3)+Gr(1,p1,p2,p3);
 
@@ -268,6 +278,37 @@ id Gr(1,p5)*ketB(p5,1) = 0;
 id braA(p4,1)*Gr(1,p?{p3,p4})*ketB(p5,1) = spA(p4,p)*spB(p,p5);
 
 
+
+***************************************Plug in bullshit to print part in progress
+*id pow(?x) = 1/23;
+*id pp12 = 2/11;
+*id pp23 = 1/67;
+*id pp34 = 1/3;
+*id pp45 = 1/101;
+*id pp15 = 23/2;
+*id M = 4/119;
+*repeat id x?{InvG11,InvG12,InvG13,InvG14,InvG22,InvG23,InvG24,InvG33,InvG34,InvG44} = 1;
+*repeat id x?{InvG11,InvG13, InvG34}=1;
+*repeat id x?{InvG12,InvG14,InvG23,InvG44}=3;
+*repeat id x?{InvG22,InvG33,InvG24}=5;
+
+#include gscaledecomp_elements.out
+
+b braA, ketB, spA, spB, ispA, ispB;
+print +s; *correct global phase factor according to helicity choice reproduced
+.sort
+
+
+
+
+
+id pow(?x) = 1/23;
+id pp12 = 2/11;
+id pp23 = 1/67;
+id pp34 = 1/3;
+id pp45 = 1/101;
+id pp15 = 23/2;
+id M = 4/119;
 
 ********************************************************************************************************************************
 * third step: perform spinor helicity formalism on p1,p2,p3 part
@@ -389,7 +430,7 @@ id braA(p?,v?)*G(v?,?x)*ketB(q?,v?) = spAB(p,?x,q);
 
 
 ***************************************plug in Inverse Gram in terms of invariants
-#include gscaledecomp_elements.out
+* #include gscaledecomp_elements.out
 
 .sort
 
@@ -459,36 +500,9 @@ id M = 5;
 *id InvG44 = 4;
 
 b braA, braB, ketA, ketB, ispA, ispB, spA,spB, spAA, spBB, spAB, spBA, G;
-print +s;
+*print +s;
 .sort
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**************************************change to G
-*id Gr(?x) = G(?x);
-
-***************************************close brackets
-*id braA(r2,0)*G(0,p2,p?)*ketA(r1,0) = spA(r2,r1)*p2.p - braA(r2,0)*G(0,p,p2)*ketA(r1,0);
-*id braA(r2,0)*ketA(r1,0) = spA(p,q);
-*id braA(r2,0)*G(0,p1?{p3,p4},p2?{p3,p4})*ketA(r1,0) = spA(p,p3)*spB(p3,p4)*spA(p4,q);
-
-*id braA(r2,0)*G(0,p?)*ketA(r1,0) =  0;
-*id braA(r2,0)*G(0,p?,q?,k?)*ketA(r1,0) = 0;
 
 
 
