@@ -48,7 +48,7 @@ cf DS, DG, DV;
 * vertex functions
 * non-commuting objects -> spinor space
 
-f G, Gi, Gr;
+f G, Gi, Gr,Gs,Gt;
 cf VVV;
 
 
@@ -80,6 +80,7 @@ s s1,s2,s3,s4,s5,s6,s7,s8,s9,s10;
 s n;
 cf delta(symmetric);
 cf gmunu;
+cf factors;
 
 
 ***************************************************************************
@@ -87,7 +88,7 @@ cf gmunu;
 
 f braA, ketA, braB, ketB;
 cf spA(antisymmetric), spB(antisymmetric), spAA, spBB, spAB, spBA, ispA(antisymmetric), ispB(antisymmetric);
-
+cf hel1, hel2, hel3, hel4, hel, norm;
 
 ***************************************************************************
 * bullshit for bad way to decompose in tensor basis

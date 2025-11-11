@@ -1,0 +1,29 @@
+#procedure DiracEquation
+
+id Gr(v?) = y; *debug
+
+repeat;
+
+id Gr(v?,?x,p3)*U(p3,v?) = 0;
+id VBar(p4,v?)*Gr(v?,p4,?x) = 0;
+
+id Gr(v?,?x,p1)*V(p1,v?) = -M*Gr(v,?x)*V(p1,v);
+id UBar(p2,v?)*Gr(v?,p2,?x) = M*UBar(p2,v)*Gr(v,?x);
+
+id Gr(v?,?x,p?,v1l1?index_,?y)*U(p?,v?) = (Gr(v,?x,?y)*2*p(v1l1)-Gr(v,?x,v1l1,p,?y))*U(p,v);
+id VBar(p?,v?)*Gr(v?,?x,v0l0?index_,p?,?y) = VBar(p,v)*(2*p(v0l0)*Gr(v,?x,?y)-Gr(v,?x,p,v0l0,?y));
+
+id Gr(v?,?x,p?,v1l1?index_,?y)*V(p?,v?) = (Gr(v,?x,?y)*2*p(v1l1)-Gr(v,?x,v1l1,p,?y))*V(p,v);
+id UBar(p?,v?)*Gr(v?,?x,v0l0?index_,p?,?y) = UBar(p,v)*(2*p(v0l0)*Gr(v,?x,?y)-Gr(v,?x,p,v0l0,?y));
+
+id Gr(v?,?x,p?,q?vector_,?y)*U(p?,v?) = (2*p.q*Gr(v,?x,?y)-Gr(v,?x,q,p,?y))*U(p,v);
+id VBar(p?,v?)*Gr(v?,?x,q?vector_,p?,?y) = VBar(p,v)*(2*p.q*Gr(v,?x,?y)-Gr(v,?x,p,q,?y));
+
+id Gr(v?,?x,p?,q?vector_,?y)*V(p?,v?) = (2*p.q*Gr(v,?x,?y)-Gr(v,?x,q,p,?y))*V(p,v);
+id UBar(p?,v?)*Gr(v?,?x,q?vector_,p?,?y) = UBar(p,v)*(2*p.q*Gr(v,?x,?y)-Gr(v,?x,p,q,?y));
+endrepeat;
+
+id Gr(0) = 1;
+
+.sort
+#endprocedure
