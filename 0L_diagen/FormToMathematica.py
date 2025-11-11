@@ -54,7 +54,7 @@ def convert_functions(s: str) -> str:
                 else:
                     expr.append(')')
             else:
-                raise ConversionError("Unmatched closing parenthesis")
+                raise ValueError("Unmatched closing parenthesis")
         else:
             expr.append(ch)
 
@@ -97,7 +97,7 @@ def process_file(infile: str, outfile: str) -> None:
 
 def main():
     if len(sys.argv) != 2:
-        print("Usage: python to_mathematica.py <inputfile-or-directory>", file=sys.stderr)
+        print("Usage: FormToMathematica.py <inputfile-or-directory>", file=sys.stderr)
         sys.exit(1)
     
     inpath = sys.argv[1]
