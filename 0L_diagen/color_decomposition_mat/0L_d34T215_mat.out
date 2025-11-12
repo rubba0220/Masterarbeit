@@ -1,6 +1,1 @@
-d34T215 = + cOldel[i3,i4]*cOlT[i2,i1,a5]*NF^-1 * (
-+ 1/2*VBar[p4,0]*G[0,v7l2]*U[p3,0]*UBar[p2,1]*G[1,v6l4]*G[1,p2 + p5]*G[1,v7l2]*V[p1,1]*EpsStar[v6l4,p5]*(- 4*pp34*M^2 - 4*pp34*pp15 + 4*pp34^2 - 4*pp12*pp34)^(-1)*I
-+ 1/2*VBar[p4,0]*G[0,v7l2]*U[p3,0]*UBar[p2,1]*G[1,v6l4]*Gi(1)*G[1,v7l2]*V[p1,1]*EpsStar[v6l4,p5]*(- 4*pp34*M^2 - 4*pp34*pp15 + 4*pp34^2 - 4*pp12*pp34)^(-1)*I*M
-+ 1/2*VBar[p4,0]*G[0,v7l2]*U[p3,0]*UBar[p2,1]*G[1,v7l2]*G[1, - p1 - p5]*G[1,v6l4]*V[p1,1]*EpsStar[v6l4,p5]*(4*pp34*pp15)^(-1)*I
-+ 1/2*VBar[p4,0]*G[0,v7l2]*U[p3,0]*UBar[p2,1]*G[1,v7l2]*Gi(1)*G[1,v6l4]*V[p1,1]*EpsStar[v6l4,p5]*(4*pp34*pp15)^(-1)*I*M
-);
+d34T215 = + cOldel[i3,i4]*cOlT[i2,i1,a5]*NF^-1 * ( + 1/2*VBar[p4,0]*G[0,v7l2]*U[p3,0]*UBar[p2,1]*G[1,v6l4]*G[1,p2 + p5]*G[1,v7l2]*V[p1,1]*EpsStar[v6l4,p5]*(- 4*pp34*M^2 - 4*pp34*pp15 + 4*pp34^2 - 4*pp12*pp34)^(-1)*I + 1/2*VBar[p4,0]*G[0,v7l2]*U[p3,0]*UBar[p2,1]*G[1,v6l4]*Gi(1)*G[1,v7l2]*V[p1,1]*EpsStar[v6l4,p5]*(- 4*pp34*M^2 - 4*pp34*pp15 + 4*pp34^2 - 4*pp12*pp34)^(-1)*I*M + 1/2*VBar[p4,0]*G[0,v7l2]*U[p3,0]*UBar[p2,1]*G[1,v7l2]*G[1, - p1 - p5]*G[1,v6l4]*V[p1,1]*EpsStar[v6l4,p5]*(4*pp34*pp15)^(-1)*I + 1/2*VBar[p4,0]*G[0,v7l2]*U[p3,0]*UBar[p2,1]*G[1,v7l2]*Gi(1)*G[1,v6l4]*V[p1,1]*EpsStar[v6l4,p5]*(4*pp34*pp15)^(-1)*I*M ); 
