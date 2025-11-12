@@ -80,7 +80,7 @@ def process_file(infile: str, outfile: str) -> None:
         text = f.read()
 
     # Apply transformations
-    text = re.sub(r'[\r\n]+', ' ', text)
+    # text = re.sub(r'[\r\n]+', ' ', text)
     text = drop_local(text)
     text = convert_pow(text)
     text = convert_i(text)
