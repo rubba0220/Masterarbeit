@@ -1,4 +1,4 @@
-FORM 4.3 (Nov 27 2022) 64-bits                   Run: Tue Nov 11 12:30:25 2025
+FORM 4.3 (Nov 27 2022) 64-bits                   Run: Wed Nov 12 14:18:55 2025
     #-
 ~~~color factors
 ~~~feynman rules
@@ -99,4 +99,54 @@ FORM 4.3 (Nov 27 2022) 64-bits                   Run: Tue Nov 11 12:30:25 2025
           );
 
 ~~~end_sum
+~~~gamma strings
+~~~begin_strings
+
+   sum0l =
+
+       + cOldel(i1,i2)*cOlT(i4,i3,a5)*NF^-1 * (
+          + 1/2*UBar(p2,0)*G(0,v6l5)*V(p1,0)*VBar(p4,1)*G(1,v6l5,p3 - p5,v7l1)*U(p3,1)*EpsStar(v7l1,p5)*pow(4*M^4 + 4*pp45*M^2 - 4*pp34*M^2 + 8*pp12*M^2 + 4*pp12*pp45 - 4*pp12*pp34 + 4*pp12^2,-1)*i_
+          + 1/2*VBar(p4,0)*G(0,v7l1, - p4 + p5,v6l5)*U(p3,0)*UBar(p2,1)*G(1,v6l5)*V(p1,1)*EpsStar(v7l1,p5)*pow( - 4*pp45*M^2 - 4*pp12*pp45,-1)*i_
+          )
+
+       + cOldel(i1,i4)*cOlT(i2,i3,a5) * (
+          - 1/2*UBar(p2,0)*G(0,v6l5)*V(p1,0)*VBar(p4,1)*G(1,v6l5,p3 - p5,v7l1)*U(p3,1)*EpsStar(v7l1,p5)*pow(4*M^4 + 4*pp45*M^2 - 4*pp34*M^2 + 8*pp12*M^2 + 4*pp12*pp45 - 4*pp12*pp34 + 4*pp12^2,-1)*i_
+          + 1/2*VBar(p4,0)*G(0,p1)*U(p3,0)*UBar(p2,1)*G(1,v6l5)*V(p1,1)*EpsStar(v6l5,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          + 1/2*VBar(p4,0)*G(0,p2)*U(p3,0)*UBar(p2,1)*G(1,v6l5)*V(p1,1)*EpsStar(v6l5,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          - 1/2*VBar(p4,0)*G(0,p5)*U(p3,0)*UBar(p2,1)*G(1,v6l5)*V(p1,1)*EpsStar(v6l5,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          + 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,p3)*V(p1,1)*EpsStar(v7l2,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          + 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,p4)*V(p1,1)*EpsStar(v7l2,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          + 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,p5)*V(p1,1)*EpsStar(v7l2,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          - 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,v6l4,p2 + p5,v7l2)*V(p1,1)*EpsStar(v6l4,p5)*pow( - 4*pp34*M^2 - 4*pp34*pp15 + 4*pp34^2 - 4*pp12*pp34,-1)*i_
+          - 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,v6l4,v7l2)*V(p1,1)*EpsStar(v6l4,p5)*pow( - 4*pp34*M^2 - 4*pp34*pp15 + 4*pp34^2 - 4*pp12*pp34,-1)*i_*M
+          - 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,v7l2)*V(p1,1)*EpsStar(p1,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          - 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,v7l2)*V(p1,1)*EpsStar(p2,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          - 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,v7l2)*V(p1,1)*EpsStar(p3,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          - 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,v7l2)*V(p1,1)*EpsStar(p4,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          )
+
+       + cOldel(i2,i3)*cOlT(i4,i1,a5) * (
+          - 1/2*VBar(p4,0)*G(0,p1)*U(p3,0)*UBar(p2,1)*G(1,v6l5)*V(p1,1)*EpsStar(v6l5,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          - 1/2*VBar(p4,0)*G(0,p2)*U(p3,0)*UBar(p2,1)*G(1,v6l5)*V(p1,1)*EpsStar(v6l5,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          + 1/2*VBar(p4,0)*G(0,p5)*U(p3,0)*UBar(p2,1)*G(1,v6l5)*V(p1,1)*EpsStar(v6l5,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          - 1/2*VBar(p4,0)*G(0,v7l1, - p4 + p5,v6l5)*U(p3,0)*UBar(p2,1)*G(1,v6l5)*V(p1,1)*EpsStar(v7l1,p5)*pow( - 4*pp45*M^2 - 4*pp12*pp45,-1)*i_
+          - 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,p3)*V(p1,1)*EpsStar(v7l2,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          - 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,p4)*V(p1,1)*EpsStar(v7l2,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          - 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,p5)*V(p1,1)*EpsStar(v7l2,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          + 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,v7l2)*V(p1,1)*EpsStar(p1,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          + 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,v7l2)*V(p1,1)*EpsStar(p2,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          + 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,v7l2)*V(p1,1)*EpsStar(p3,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          + 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,v7l2)*V(p1,1)*EpsStar(p4,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
+          - 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,v7l2, - p1 - p5,v6l4)*V(p1,1)*EpsStar(v6l4,p5)*pow(4*pp34*pp15,-1)*i_
+          - 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,v7l2,v6l4)*V(p1,1)*EpsStar(v6l4,p5)*pow(4*pp34*pp15,-1)*i_*M
+          )
+
+       + cOldel(i3,i4)*cOlT(i2,i1,a5)*NF^-1 * (
+          + 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,v6l4,p2 + p5,v7l2)*V(p1,1)*EpsStar(v6l4,p5)*pow( - 4*pp34*M^2 - 4*pp34*pp15 + 4*pp34^2 - 4*pp12*pp34,-1)*i_
+          + 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,v6l4,v7l2)*V(p1,1)*EpsStar(v6l4,p5)*pow( - 4*pp34*M^2 - 4*pp34*pp15 + 4*pp34^2 - 4*pp12*pp34,-1)*i_*M
+          + 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,v7l2, - p1 - p5,v6l4)*V(p1,1)*EpsStar(v6l4,p5)*pow(4*pp34*pp15,-1)*i_
+          + 1/2*VBar(p4,0)*G(0,v7l2)*U(p3,0)*UBar(p2,1)*G(1,v7l2,v6l4)*V(p1,1)*EpsStar(v6l4,p5)*pow(4*pp34*pp15,-1)*i_*M
+          );
+
+~~~end_strings
   0.01 sec out of 0.02 sec

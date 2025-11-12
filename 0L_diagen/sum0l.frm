@@ -55,4 +55,14 @@ print +s sum0l;
 
 #message end_sum;
 
+#message gamma strings
+id Gi(?x) = 1;
+repeat id G(v?, ?x)*G(v?, ?y) = G(v, ?x, ?y);
+b cOlT,cOldel,NF;
+
+#message begin_strings
+print +s sum0l;
+.sort
+#message end_strings
+
 .end
