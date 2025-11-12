@@ -99,4 +99,9 @@ s InvG31, InvG32, InvG33, InvG34;
 s InvG41, InvG42, InvG43, InvG44;
 s InvGfac;
 
+***************************************************************************
+* constants in spinors from recola
+
+f rR, apR, amR, bpR, bmR, sR, phatpR, phatmR, ppR, pmR, ptR, abspR;  
+
 .global
