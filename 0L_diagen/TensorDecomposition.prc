@@ -100,7 +100,7 @@ id EpsStar(p4,p5) = -EpsStar(p3,p5)+EpsStar(p1,p5)+EpsStar(p2,p5);
 
 
 ***************************************gauge choice p3*epsStar = 0 (reference vector choice q=p3)
-#if GAUGECHOICE
+#if `GAUGECHOICE'
     id EpsStar(p3,p5) = 0;
 #endif
 .sort

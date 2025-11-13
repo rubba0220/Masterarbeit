@@ -87,7 +87,7 @@ cf factors;
 * spinor helicity formalism objects
 
 f braA, ketA, braB, ketB;
-cf spA(antisymmetric), spB(antisymmetric), spAA, spBB, spAB, spBA, ispA(antisymmetric), ispB(antisymmetric);
+cf spA(antisymmetric), spB(antisymmetric), spAA, spBB, spAB, spBA, ispA(antisymmetric), ispB(antisymmetric), ispAA, ispBB, ispAB, ispBA;
 cf hel1, hel2, hel3, hel4, hel, norm;
 
 ***************************************************************************
