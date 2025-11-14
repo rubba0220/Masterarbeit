@@ -1,4 +1,4 @@
-FORM 4.3 (Nov 27 2022) 64-bits                   Run: Wed Nov 12 16:11:15 2025
+FORM 4.3 (Nov 27 2022) 64-bits                   Run: Fri Nov 14 09:56:10 2025
     #-
 ~~~color factors
 ~~~feynman rules
@@ -149,4 +149,4 @@ FORM 4.3 (Nov 27 2022) 64-bits                   Run: Wed Nov 12 16:11:15 2025
           );
 
 ~~~end_strings
-  0.01 sec out of 0.01 sec
+  0.01 sec out of 0.02 sec

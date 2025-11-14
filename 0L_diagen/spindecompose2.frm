@@ -32,23 +32,62 @@ id cOldel(i3,i4)*cOlT(i2,i1,a5)*NF^(-1) = 1;
 
 #call TensorDecomposition(1)
 
+#include gscaledecomp_elements.out
+*mul pow(InvGfac,-1)^2;
+*Argument pow;
+*#include gscaledecomp_scale.out
+*EndArgument;
+*.sort
+
+*#call ToMomentumTwistors
+
+*#call Rat
+*.sort
+*b UBar,V,VBar,U,EpsStar;
+*print +s;
+*.sort
+
+.store
+Off Statistics;
+Format 255;
+
 ********************************************************************************************************************************
-* second step: helicity choice and 
+* second step: helicity choice, spinor-helicity formalism and evaluation at reference points
 ********************************************************************************************************************************
+global prefac = pow(M,-1)*(hel*ispA(p3,p4)*ispB(p3,p5)*spA(p3,p5) + (1-hel)*ispA(p3,p4)*ispB(p4,p5)*spA(p4,p5))*4*pp34^2;
 
-*#call SpinorHelicity(1)
+global a12 = pow(2*pp34,-1)*ispA(p3,p4) * spA(f1,p3) * spA(f2,p4);
+global a22 = pow(2*pp34,-1)*ispA(p3,p4) * spA(f1,p3) * spA(f2,p4);
+global a23 = pow(2*pp34,-1)*ispA(p3,p4) * spA(f1,p4) * spA(f2,p3);
+global a34 = -ispAA(p4,p5,p3,p4) * spA(f1,p4) * spA(f2,p4);
+global a41 = -ispAA(p3,p4,p5,p3) * spA(f1,p3) * spA(f2,p3);
+
+.store
+Off Statistics;
+Format 255;
 
 
-***************************************Plug in values to print part in progress
 
+* d12T435
+* d14T235
+* d23T415
+
+local A1 = d23T415;
+#call SpinorHelicity(1,p3,p4)
+mul a12;
+#call SpinorHelicityReduction
+
+#call Rat
 #call Values
-
-b UBar,V;
-print +s; *correct tensor basis brute force reproduced
+b UBar,V,VBar,U,EpsStar;
+print +s;
 .sort
 
+.store
+Off Statistics;
+Format 255;
 
-
+* d34T215
 
 
 .end

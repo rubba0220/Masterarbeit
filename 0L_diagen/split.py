@@ -64,11 +64,11 @@ for i, (t, t_s) in enumerate(zip(color_terms, color_terms_strings), 1):
         expr = "\n".join(t)
         if not expr.rstrip().endswith(";"):
             expr = expr + ";"
-        g.write(f"Local {tag} = {expr}\n")
+        g.write(f"Global {tag} = {expr}\n")
 
     with open(fname_strings, "w") as g:
         expr = "\n".join(t_s)
         if not expr.rstrip().endswith(";"):
             expr = expr + ";"
-        g.write(f"Local {tag} = {expr}\n")
+        g.write(f"Global {tag} = {expr}\n")
 print(f"Wrote {len(color_terms)} term files to: {OUTDIR}(_strings)/")

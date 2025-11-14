@@ -1,4 +1,4 @@
-Local d14T235 = + cOldel(i1,i4)*cOlT(i2,i3,a5) * (
+Global d14T235 = + cOldel(i1,i4)*cOlT(i2,i3,a5) * (
 - 1/2*UBar(p2,0)*G(0,v6l5)*V(p1,0)*VBar(p4,1)*G(1,v6l5)*G(1,p3 - p5)*G(1,v7l1)*U(p3,1)*EpsStar(v7l1,p5)*pow(4*M^4 + 4*pp45*M^2 - 4*pp34*M^2 + 8*pp12*M^2 + 4*pp12*pp45 - 4*pp12*pp34 + 4*pp12^2,-1)*i_
 + 1/2*VBar(p4,0)*G(0,p1)*U(p3,0)*UBar(p2,1)*G(1,v6l5)*V(p1,1)*EpsStar(v6l5,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_
 + 1/2*VBar(p4,0)*G(0,p2)*U(p3,0)*UBar(p2,1)*G(1,v6l5)*V(p1,1)*EpsStar(v6l5,p5)*pow(4*pp34*M^2 + 4*pp12*pp34,-1)*i_

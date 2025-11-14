@@ -26,6 +26,7 @@ i i0,j0,i1,i2,i3,i4,j1,j2,j3,j4,a5,i5,j5;
 v p, p1, p2, p3, p4, p5, k, k1, k2, k3, f, f1, f2, r, r1, r2, q;
 s pp, pp12, pp23, pp34, pp45, pp15;
 s M, m;
+s s34, t12, t23, t45, t51, x5123;
 
 
 ***************************************************************************
@@ -74,9 +75,9 @@ AutoDeclare Symbol cOlc;
 * utilities for potentiation and other algebraic operations
 * gmunu not symmetric because it might already only contain relevant terms of replacing gamma matrices
 
-cf pow;
+cf pow, rat;
 s x,y,z;
-s s1,s2,s3,s4,s5,s6,s7,s8,s9,s10;
+s s1,s2,s3,s4,s5,s6,s7,s8,s9;
 s n;
 cf delta(symmetric);
 cf gmunu;
