@@ -104,5 +104,5 @@ s InvGfac;
 * constants in spinors from recola
 
 f rR, apR, amR, bpR, bmR, sR, phatpR, phatmR, ppR, pmR, ptR, abspR;  
-
+Cf ten;
 .global

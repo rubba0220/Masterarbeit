@@ -33,13 +33,12 @@ id cOldel(i3,i4)*cOlT(i2,i1,a5)*NF^(-1) = 1;
 #call TensorDecomposition(1)
 
 #include gscaledecomp_elements.out
+
 *mul pow(InvGfac,-1)^2;
+
 *Argument pow;
 *#include gscaledecomp_scale.out
 *EndArgument;
-*.sort
-
-*#call ToMomentumTwistors
 
 *#call Rat
 *.sort
@@ -77,8 +76,8 @@ local A1 = d23T415;
 mul a12;
 #call SpinorHelicityReduction
 
-#call Rat
-#call Values
+*#call Rat
+*#call Values
 b UBar,V,VBar,U,EpsStar;
 print +s;
 .sort

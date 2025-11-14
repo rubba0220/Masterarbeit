@@ -4,8 +4,10 @@ import os
 
 FUNCTIONS = [
     "cOldel", "cOlT",
-    "UBar", "U", "VBar", "V",
-    "G", "EpsStar"]
+    "UBar", "U", "VBar", "V", "G", "EpsStar", 
+    "spA", "spB", "spAB", "spBA", "spAA", "spBB",
+    "ispA", "ispB", "ispAB", "ispBA", "ispAA", "ispBB",
+    "rat"]
 
 def convert_pow(s: str) -> str:
     """
@@ -18,11 +20,28 @@ def convert_pow(s: str) -> str:
         return f"({base})^({exp})"
     return pattern.sub(repl, s)
 
+def convert_rat(s: str) -> str:
+    """
+    Convert rat(a,b) -> (a)/(b)
+    """
+    pattern = re.compile(r"rat\(([^,]+),([^)]+)\)")
+    def repl(m):
+        num = m.group(1).strip()
+        den = m.group(2).strip()
+        return f"({num})/({den})"
+    return pattern.sub(repl, s)
+
 def drop_local(s: str) -> str:
     """
     Drop 'Local ' keyword at the start of assignments.
     """
     return re.sub(r'^Local\s+', '', s)
+
+def drop_global(s: str) -> str:
+    """
+    Drop 'Global ' keyword at the start of assignments.
+    """
+    return re.sub(r'^Global\s+', '', s)
 
 def convert_i(s: str) -> str:
     """
@@ -82,7 +101,9 @@ def process_file(infile: str, outfile: str) -> None:
     # Apply transformations
     # text = re.sub(r'[\r\n]+', ' ', text)
     text = drop_local(text)
+    text = drop_global(text)
     text = convert_pow(text)
+    text = convert_rat(text)
     text = convert_i(text)
     text = convert_functions(text)
 
